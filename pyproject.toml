@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcts-rewrite"
+version = "0.1.0"
+description = "Verified plan-guided hybrid SQL rewrite research harness"
+requires-python = ">=3.12"
+dependencies = ["psycopg[binary]>=3.2,<4", "sqlglot>=27,<28", "numpy==1.26.3", "JPype1>=1.5,<2", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+data = ["Faker==22.2.0"]
+
+[tool.setuptools.packages.find]
+include = ["mcts_rewrite*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

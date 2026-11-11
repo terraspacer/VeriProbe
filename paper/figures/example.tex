@@ -1,0 +1,30 @@
+% Fig. 3: the data that flows through the layer for one statement
+% (DSB query 81, scale factor 10). Numbers come from the campaign log.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=8.55cm] (q) at (4.275, 5.55)
+    {Statement $q$: DSB query 81 at scale factor 10.\\The original is cut off after \SI{\Tmax}{\second}.};
+
+  \node[proc, minimum width=2.70cm, minimum height=1.40cm] (c1) at (1.375, 4.00) {LLM proposal:\\aggregate once\\per state};
+  \node[proc, minimum width=2.70cm, minimum height=1.40cm] (c2) at (4.275, 4.00) {Replayed\\R-Bot rewrite};
+  \node[proc, minimum width=2.70cm, minimum height=1.40cm] (c3) at (7.175, 4.00) {Planner hints\\on original text};
+
+  \node[store, minimum width=2.70cm, minimum height=1.05cm] (g1) at (1.375, 2.45) {Gate: accepted,\\bounded testing};
+  \node[store, minimum width=2.70cm, minimum height=1.05cm] (g2) at (4.275, 2.45) {Gate: accepted,\\bounded testing};
+  \node[store, minimum width=2.70cm, minimum height=1.05cm] (g3) at (7.175, 2.45) {Gate: accepted,\\syntactic};
+
+  \node[exec, minimum width=2.70cm, minimum height=1.05cm] (p1) at (1.375, 1.10) {Cost \ExampleMacroCost;\\probe finishes};
+  \node[exec, minimum width=2.70cm, minimum height=1.05cm] (p2) at (4.275, 1.10) {Cost \ExampleRuleCost;\\probe is cut off};
+  \node[exec, minimum width=2.70cm, minimum height=1.05cm] (p3) at (7.175, 1.10) {Cost above $10^{6}$;\\probes cut off};
+
+  \node[store, minimum width=8.55cm] (r) at (4.275, -0.25)
+    {Output $r^{\ast}$: the LLM proposal,\\\SI{\ExampleOurs}{\second} as the median of three runs.};
+
+  \foreach \c in {c1,c2,c3} {\draw[flow] (\c.north |- q.south) -- (\c.north);}
+  \draw[flow] (c1.south) -- (g1.north);
+  \draw[flow] (c2.south) -- (g2.north);
+  \draw[flow] (c3.south) -- (g3.north);
+  \draw[flow] (g1.south) -- (p1.north);
+  \draw[flow] (g2.south) -- (p2.north);
+  \draw[flow] (g3.south) -- (p3.north);
+  \draw[flow] (p1.south) -- (p1.south |- r.north);
+\end{tikzpicture}

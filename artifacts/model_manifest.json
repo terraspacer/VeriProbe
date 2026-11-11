@@ -1,0 +1,13 @@
+{
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "generation": "session_subagents",
+  "unique_inputs": 439,
+  "candidate_count": 666,
+  "source_files": {
+    "model_calcite.jsonl": "7b2e3c8b89ca4c65a3d22475c7ae091851f34290ade572b0b4f7b9571d27a2dc",
+    "model_candidates.jsonl": "be7a1ad32f98e8bea0b7f2b88196efa563d706c8db387c24c0b87262929f39eb",
+    "model_dsb.jsonl": "a48fe1e579c8bb1b2702c254ff81647d810437a946ae738b106f8bffcc0db0a5",
+    "model_tpch.jsonl": "8fea3b11f3d4a7fe57c80590347aff2be997297352dfe68dc9ad484e64987a2a"
+  }
+}

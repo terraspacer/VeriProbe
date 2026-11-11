@@ -1,0 +1,18 @@
+% Order of the experimental steps.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=4.05cm, minimum height=1.05cm] (s1) at (2.05, 4.05) {\textbf{1}~441 published statements\\of R-Bot and QUITE};
+  \node[proc, minimum width=4.05cm, minimum height=1.05cm] (s2) at (2.05, 2.70) {\textbf{2}~Freeze 666 LLM proposals\\(no target timing seen)};
+  \node[proc, minimum width=4.05cm, minimum height=1.05cm] (s3) at (2.05, 1.35) {\textbf{3}~Choose \textsc{Dev}: 30\\statements by planner cost};
+  \node[proc, minimum width=4.05cm, minimum height=1.05cm] (s4) at (2.05, 0.00) {\textbf{4}~Tune the pool on \textsc{Dev}\\(hints, one manual rewrite)};
+  \node[exec, minimum width=4.05cm, minimum height=1.05cm] (s5) at (6.60, 4.05) {\textbf{5}~Campaign on \textsc{Dev}\\(cached and new timings)};
+  \node[exec, minimum width=4.05cm, minimum height=1.05cm] (s6) at (6.60, 2.70) {\textbf{6}~Campaigns on held-out,\\\textsc{Zipf}, and \textsc{SF\,50}};
+  \node[proc, minimum width=4.05cm, minimum height=1.05cm] (s7) at (6.60, 1.35) {\textbf{7}~Report intervals and\\paired outcomes};
+  \node[exec, minimum width=4.05cm, minimum height=1.05cm] (s8) at (6.60, 0.00) {\textbf{8}~Validation session:\\one cutoff, interleaved runs};
+  \draw[flow] (s1.south) -- (s2.north);
+  \draw[flow] (s2.south) -- (s3.north);
+  \draw[flow] (s3.south) -- (s4.north);
+  \draw[flow] (s4.east) -- ++(0.25,0) |- (s5.west);
+  \draw[flow] (s5.south) -- (s6.north);
+  \draw[flow] (s6.south) -- (s7.north);
+  \draw[flow] (s7.south) -- (s8.north);
+\end{tikzpicture}

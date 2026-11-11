@@ -1,0 +1,34 @@
+{
+  "format_version": 1,
+  "sources_linked_by": [
+    "vendor/LLM4Rewrite/README.md",
+    "vendor/QUITE/README.md"
+  ],
+  "repositories": {
+    "tpch-kit": {
+      "url": "https://github.com/gregrahn/tpch-kit",
+      "commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+      "build": ["make", "-j2", "MACHINE=LINUX", "DATABASE=POSTGRESQL"],
+      "build_directory": "dbgen",
+      "seed": "unmodified deterministic built-in RNG streams"
+    },
+    "dsb": {
+      "url": "https://github.com/microsoft/dsb",
+      "commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+      "build": ["make", "-j2", "CC=gcc", "OS=LINUX"],
+      "build_directory": "code/tools",
+      "seed": 0,
+      "all_tables_one_invocation": true
+    },
+    "SlabCity": {
+      "url": "https://github.com/eidos06/SlabCity",
+      "commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+      "seed": 2333,
+      "dependencies": {"Faker": "22.2.0", "numpy": "1.26.3"},
+      "wrapper": "scripts/generate_calcite.py",
+      "zipf_overflow_retry_seed_sequence": "2334,2335,...",
+      "author_40M_script_released": false
+    }
+  },
+  "exact_author_snapshots": false
+}

@@ -1,0 +1,23 @@
+% Flowchart: how the candidate pool of one statement is built.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=4.6cm] (in) at (0, 7.85) {Statement $q$ and the schema};
+  \node[proc, minimum width=4.6cm] (collect) at (0, 6.85) {Collect frozen LLM proposals\\and published rewrites for $q$};
+  \node[dec, minimum width=4.6cm] (rule) at (0, 5.65) {Is a rule rewrite\\among them?};
+  \node[proc, minimum width=2.3cm] (calcite) at (4.10, 5.65) {Apply up to\\eight matching\\Calcite rules};
+  \node[store, minimum width=4.6cm] (d1) at (0, 4.55) {Candidates of depth 1};
+  \node[proc, minimum width=4.6cm] (expand) at (0, 3.35) {For each new candidate:\\look up proposals for its text,\\add planner hints (\textsc{Dev} only)};
+  \node[dec, minimum width=4.6cm] (more) at (0, 1.95) {New candidates, and\\depth below five?};
+  \node[proc, minimum width=4.6cm] (dedup) at (0, 0.75) {Remove duplicate texts,\\keep at most 64 candidates};
+  \node[store, minimum width=4.6cm] (pool) at (0, -0.30) {Pool $P(q)$};
+
+  \draw[flow] (in.south) -- (collect.north);
+  \draw[flow] (collect.south) -- (rule.north);
+  \draw[flow] (rule.south) -- node[right, inner sep=3pt] {yes} (d1.north);
+  \draw[flow] (rule.east) -- node[above, inner sep=2pt] {no} (calcite.west);
+  \draw[flow] (calcite.south) |- (d1.east);
+  \draw[flow] (d1.south) -- (expand.north);
+  \draw[flow] (expand.south) -- (more.north);
+  \draw[flow] (more.west) -- node[above, inner sep=2pt] {yes} ++(-0.65,0) |- (expand.west);
+  \draw[flow] (more.south) -- node[right, inner sep=3pt] {no} (dedup.north);
+  \draw[flow] (dedup.south) -- (pool.north);
+\end{tikzpicture}

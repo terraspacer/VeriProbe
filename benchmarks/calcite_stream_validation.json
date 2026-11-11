@@ -1,0 +1,90 @@
+{
+  "rows_parameter": 10000,
+  "all_equal": true,
+  "checks": [
+    {
+      "distribution": "uniform",
+      "table": "BONUS",
+      "source_sha256": "0700d449ce47ab3d562cff29cde195e59e83ed0b8a45e394174834bbc124cbac",
+      "stream_sha256": "0700d449ce47ab3d562cff29cde195e59e83ed0b8a45e394174834bbc124cbac",
+      "equal": true
+    },
+    {
+      "distribution": "uniform",
+      "table": "DEPT",
+      "source_sha256": "296079ac9a70beed7252509ff4e8432b115566830bc4f105050082c323f63824",
+      "stream_sha256": "296079ac9a70beed7252509ff4e8432b115566830bc4f105050082c323f63824",
+      "equal": true
+    },
+    {
+      "distribution": "uniform",
+      "table": "EMP",
+      "source_sha256": "10cc4ad9b0fc0bc5f083b48c8ff2fca3a4274743bc969d7abd2e9976a0a49536",
+      "stream_sha256": "10cc4ad9b0fc0bc5f083b48c8ff2fca3a4274743bc969d7abd2e9976a0a49536",
+      "equal": true
+    },
+    {
+      "distribution": "uniform",
+      "table": "EMPNULLABLES",
+      "source_sha256": "1ed733ce3c4288289a604014053a2cc8f3d3ef85fda718fc6183c95eaaa91d78",
+      "stream_sha256": "1ed733ce3c4288289a604014053a2cc8f3d3ef85fda718fc6183c95eaaa91d78",
+      "equal": true
+    },
+    {
+      "distribution": "uniform",
+      "table": "EMPNULLABLES_20",
+      "source_sha256": "ba1ce971312d19e17ad7655ff160de932f55d08878ef44e1f2b521f8241b6a3a",
+      "stream_sha256": "ba1ce971312d19e17ad7655ff160de932f55d08878ef44e1f2b521f8241b6a3a",
+      "equal": true
+    },
+    {
+      "distribution": "uniform",
+      "table": "EMP_B",
+      "source_sha256": "ec704bb41f97f4c2dbbc2fb2e8219dcdd30fc9ac54942c40d9645a5347af8864",
+      "stream_sha256": "ec704bb41f97f4c2dbbc2fb2e8219dcdd30fc9ac54942c40d9645a5347af8864",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "BONUS",
+      "source_sha256": "9b633e5af32ef87733d6b343338f555ef2a0ef96560f4ee516091ba29971a742",
+      "stream_sha256": "9b633e5af32ef87733d6b343338f555ef2a0ef96560f4ee516091ba29971a742",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "DEPT",
+      "source_sha256": "0247203769b2491ec77df9d1c4dd23005dc9ed74eee3473696b2522857a5b61e",
+      "stream_sha256": "0247203769b2491ec77df9d1c4dd23005dc9ed74eee3473696b2522857a5b61e",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "EMP",
+      "source_sha256": "8279e4876387d34970500087163fb3282ebf7bb50e29faf9f645a44fcc221174",
+      "stream_sha256": "8279e4876387d34970500087163fb3282ebf7bb50e29faf9f645a44fcc221174",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "EMPNULLABLES",
+      "source_sha256": "499764f811e2ca71ab9134477d1db4103766edf4f2bd81f495deb70485e6fdfd",
+      "stream_sha256": "499764f811e2ca71ab9134477d1db4103766edf4f2bd81f495deb70485e6fdfd",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "EMPNULLABLES_20",
+      "source_sha256": "ef1da290c1d924d5b6d83650fb8509e63e2a9a37121e443a11a95df0787d896f",
+      "stream_sha256": "ef1da290c1d924d5b6d83650fb8509e63e2a9a37121e443a11a95df0787d896f",
+      "equal": true
+    },
+    {
+      "distribution": "zipf",
+      "table": "EMP_B",
+      "source_sha256": "e9cb2cf0bc08bb2d08547d5c31797e9cb02bac7bfee8cb58d8142b71ca83b84b",
+      "stream_sha256": "e9cb2cf0bc08bb2d08547d5c31797e9cb02bac7bfee8cb58d8142b71ca83b84b",
+      "equal": true
+    }
+  ]
+}

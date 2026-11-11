@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "unit": "exact upstream executed driver input",
+  "source_commits": {
+    "rbot": "c9c90e5d7867888c3aaba86e4fc9e6d48f53b375",
+    "quite": "d0dd6ee567adde144cd8a7024a657c9329231092"
+  },
+  "manifest_sha256": "f21085b43d971087b91b7931b4564b6b231773ae6fd3e023eb18d7f9f3f50294",
+  "raw_source_entries": 439,
+  "raw_source_entries_sha256": "34706094cf86ade8d7a6280a7dc7b82c25ecda893d9e0bb4945be67d6b966896",
+  "split_source_entries": [
+    {
+      "source": "rbot",
+      "benchmark": "dsb",
+      "source_path": "vendor/LLM4Rewrite/dsb/query039/query039_0.sql",
+      "source_index": null,
+      "source_commit": "c9c90e5d7867888c3aaba86e4fc9e6d48f53b375",
+      "source_file_sha256": "f3d73763e241788c06bb3e7c21d0d3c257b0d30e2b6113c2f8c2a741cd3ff278",
+      "raw_sql": "\nwith inv as\n(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n       ,stdev,mean, case mean when 0 then null else stdev/mean end cov\n from(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n            ,stddev_samp(inv_quantity_on_hand) stdev,avg(inv_quantity_on_hand) mean\n      from inventory\n          ,item\n          ,warehouse\n          ,date_dim\n      where inv_item_sk = i_item_sk\n        and inv_warehouse_sk = w_warehouse_sk\n        and inv_date_sk = d_date_sk\n        and d_year =1999\n        and i_category IN ('Books', 'Shoes')\n        and i_manager_id BETWEEN 81 and 100\n        and inv_quantity_on_hand between 800 and 1000\n      group by w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy) foo\n where case mean when 0 then 0 else stdev/mean end > 1)\nselect inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean, inv1.cov\n        ,inv2.w_warehouse_sk,inv2.i_item_sk,inv2.d_moy,inv2.mean, inv2.cov\nfrom inv inv1,inv inv2\nwhere inv1.i_item_sk = inv2.i_item_sk\n  and inv1.w_warehouse_sk =  inv2.w_warehouse_sk\n  and inv1.d_moy=7\n  and inv2.d_moy=7+1\norder by inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean,inv1.cov\n        ,inv2.d_moy,inv2.mean, inv2.cov\n;\nwith inv as\n(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n       ,stdev,mean, case mean when 0 then null else stdev/mean end cov\n from(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n            ,stddev_samp(inv_quantity_on_hand) stdev,avg(inv_quantity_on_hand) mean\n      from inventory\n          ,item\n          ,warehouse\n          ,date_dim\n      where inv_item_sk = i_item_sk\n        and inv_warehouse_sk = w_warehouse_sk\n        and inv_date_sk = d_date_sk\n        and d_year =1999\n        and i_category IN ('Books', 'Shoes')\n        and i_manager_id BETWEEN 81 and 100\n        and inv_quantity_on_hand between 800 and 1000\n      group by w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy) foo\n where case mean when 0 then 0 else stdev/mean end > 1)\nselect inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean, inv1.cov\n        ,inv2.w_warehouse_sk,inv2.i_item_sk,inv2.d_moy,inv2.mean, inv2.cov\nfrom inv inv1,inv inv2\nwhere inv1.i_item_sk = inv2.i_item_sk\n  and inv1.w_warehouse_sk =  inv2.w_warehouse_sk\n  and inv1.d_moy=7\n  and inv2.d_moy=7+1\n  and inv1.cov > 1.5\norder by inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean,inv1.cov\n        ,inv2.d_moy,inv2.mean, inv2.cov\n;\n\n\n",
+      "driver_inputs": [
+        "rbot:dsb:query039_0_0",
+        "rbot:dsb:query039_0_1"
+      ]
+    },
+    {
+      "source": "rbot",
+      "benchmark": "dsb",
+      "source_path": "vendor/LLM4Rewrite/dsb/query039/query039_1.sql",
+      "source_index": null,
+      "source_commit": "c9c90e5d7867888c3aaba86e4fc9e6d48f53b375",
+      "source_file_sha256": "818f84fd2e4fee27d2da098a52a2abe89c0080c135079ebaeb49abea46be9332",
+      "raw_sql": "\nwith inv as\n(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n       ,stdev,mean, case mean when 0 then null else stdev/mean end cov\n from(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n            ,stddev_samp(inv_quantity_on_hand) stdev,avg(inv_quantity_on_hand) mean\n      from inventory\n          ,item\n          ,warehouse\n          ,date_dim\n      where inv_item_sk = i_item_sk\n        and inv_warehouse_sk = w_warehouse_sk\n        and inv_date_sk = d_date_sk\n        and d_year =2001\n        and i_category IN ('Books', 'Electronics')\n        and i_manager_id BETWEEN 17 and 36\n        and inv_quantity_on_hand between 607 and 807\n      group by w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy) foo\n where case mean when 0 then 0 else stdev/mean end > 1)\nselect inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean, inv1.cov\n        ,inv2.w_warehouse_sk,inv2.i_item_sk,inv2.d_moy,inv2.mean, inv2.cov\nfrom inv inv1,inv inv2\nwhere inv1.i_item_sk = inv2.i_item_sk\n  and inv1.w_warehouse_sk =  inv2.w_warehouse_sk\n  and inv1.d_moy=2\n  and inv2.d_moy=2+1\norder by inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean,inv1.cov\n        ,inv2.d_moy,inv2.mean, inv2.cov\n;\nwith inv as\n(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n       ,stdev,mean, case mean when 0 then null else stdev/mean end cov\n from(select w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy\n            ,stddev_samp(inv_quantity_on_hand) stdev,avg(inv_quantity_on_hand) mean\n      from inventory\n          ,item\n          ,warehouse\n          ,date_dim\n      where inv_item_sk = i_item_sk\n        and inv_warehouse_sk = w_warehouse_sk\n        and inv_date_sk = d_date_sk\n        and d_year =2001\n        and i_category IN ('Books', 'Electronics')\n        and i_manager_id BETWEEN 17 and 36\n        and inv_quantity_on_hand between 607 and 807\n      group by w_warehouse_name,w_warehouse_sk,i_item_sk,d_moy) foo\n where case mean when 0 then 0 else stdev/mean end > 1)\nselect inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean, inv1.cov\n        ,inv2.w_warehouse_sk,inv2.i_item_sk,inv2.d_moy,inv2.mean, inv2.cov\nfrom inv inv1,inv inv2\nwhere inv1.i_item_sk = inv2.i_item_sk\n  and inv1.w_warehouse_sk =  inv2.w_warehouse_sk\n  and inv1.d_moy=2\n  and inv2.d_moy=2+1\n  and inv1.cov > 1.5\norder by inv1.w_warehouse_sk,inv1.i_item_sk,inv1.d_moy,inv1.mean,inv1.cov\n        ,inv2.d_moy,inv2.mean, inv2.cov\n;\n\n\n",
+      "driver_inputs": [
+        "rbot:dsb:query039_1_0",
+        "rbot:dsb:query039_1_1"
+      ]
+    }
+  ],
+  "entries": 441,
+  "counts": {
+    "rbot:tpch": 44,
+    "rbot:dsb": 76,
+    "rbot:calcite": 44,
+    "quite:tpch": 63,
+    "quite:dsb": 156,
+    "quite:calcite": 58
+  },
+  "parse_failures": [],
+  "multi_statements": [],
+  "unique_exact_sql": 439,
+  "scope": [
+    "tpch",
+    "dsb",
+    "calcite"
+  ],
+  "other_upstream_families": {
+    "quite:stackoverflow": {
+      "entries": 43,
+      "path": "vendor/QUITE/dataset/queries/stackoverflow_queries.json",
+      "reason": "Outside requested shared TPC-H/DSB/Calcite scope; not silently merged."
+    }
+  }
+}

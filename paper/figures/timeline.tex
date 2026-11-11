@@ -1,0 +1,24 @@
+% Fig. 7: what runs on the target database for one statement, in order.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[flow] (0.00, 0.00) -- (8.70, 0.00);
+  \node[anchor=north east, inner sep=2pt] at (8.70, -0.10) {time on $D$};
+
+  \foreach \i/\x in {0/0.40, 1/1.05, 2/1.70, 3/2.35} {
+    \node[exec, minimum width=0.55cm, minimum height=0.70cm, inner sep=0pt] (o\i) at (\x, 0.55) {};}
+  \node[anchor=south, inner sep=2pt, align=center] at (1.375, 0.98) {Original $q$,\\$1 + 3$ runs};
+
+  \node[exec, minimum width=0.55cm, minimum height=0.70cm, inner sep=0pt] (p1) at (3.45, 0.55) {};
+  \node[exec, minimum width=0.55cm, minimum height=0.70cm, inner sep=0pt] (p2) at (4.10, 0.55) {};
+  \node[anchor=south, inner sep=2pt, align=center] at (3.775, 0.98) {Probes,\\at most two};
+
+  \foreach \i/\x in {1/5.20, 2/5.85, 3/6.50} {
+    \node[exec, minimum width=0.55cm, minimum height=0.70cm, inner sep=0pt] (f\i) at (\x, 0.55) {};}
+  \node[anchor=south, inner sep=2pt, align=center] at (5.85, 0.98) {Best probe $p^{\ast}$,\\three runs};
+
+  \node[dec, minimum width=1.35cm, minimum height=0.70cm] (d) at (7.90, 0.55) {Decide};
+  \node[anchor=south, inner sep=2pt, align=center] at (7.90, 0.98) {$r^{\ast}$ or\\fallback $q$};
+
+  \node[anchor=north, inner sep=2pt] at (1.375, -0.10) {cutoff $T_{\max}$};
+  \node[anchor=north, inner sep=2pt] at (3.775, -0.10) {cutoff $c_{\mathrm{p}}$};
+  \node[anchor=north, inner sep=2pt] at (5.85, -0.10) {cutoff $c_{\mathrm{f}}$};
+\end{tikzpicture}

@@ -1,0 +1,128 @@
+{
+  "source": "Pure in-memory reconstruction; no active fixture/database queries.",
+  "generator": "scripts/build_join_aware_fixtures.py",
+  "source_schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+  "manifest_sha256": "f21085b43d971087b91b7931b4564b6b231773ae6fd3e023eb18d7f9f3f50294",
+  "profiles": [
+    "global_literals",
+    "rbot:tpch:query17_0",
+    "rbot:tpch:query20_0"
+  ],
+  "threshold": "SUM(l_quantity) > 313",
+  "cases": [
+    {
+      "case": "empty",
+      "lineitem_rows": 0,
+      "per_order_quantity_sums": {},
+      "per_order_line_counts": {},
+      "maximum_quantity_sum": null,
+      "qualifying_order_keys": []
+    },
+    {
+      "case": "null",
+      "lineitem_rows": 36,
+      "per_order_quantity_sums": {
+        "1": "101",
+        "2": "88",
+        "3": "67",
+        "4": "111",
+        "5": "111",
+        "6": "111",
+        "7": "111",
+        "8": "111",
+        "9": "111"
+      },
+      "per_order_line_counts": {
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 4
+      },
+      "maximum_quantity_sum": "111",
+      "qualifying_order_keys": []
+    },
+    {
+      "case": "duplicate",
+      "lineitem_rows": 39,
+      "per_order_quantity_sums": {
+        "1": "124",
+        "2": "88",
+        "3": "67",
+        "4": "110",
+        "5": "110",
+        "6": "110",
+        "7": "110",
+        "8": "110",
+        "9": "110"
+      },
+      "per_order_line_counts": {
+        "1": 5,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 4,
+        "6": 4,
+        "7": 5,
+        "8": 4,
+        "9": 4
+      },
+      "maximum_quantity_sum": "124",
+      "qualifying_order_keys": []
+    },
+    {
+      "case": "skew",
+      "lineitem_rows": 36,
+      "per_order_quantity_sums": {
+        "1": "189",
+        "3": "67",
+        "4": "204",
+        "6": "102",
+        "7": "204",
+        "9": "102"
+      },
+      "per_order_line_counts": {
+        "1": 8,
+        "3": 4,
+        "4": 8,
+        "6": 4,
+        "7": 8,
+        "9": 4
+      },
+      "maximum_quantity_sum": "204",
+      "qualifying_order_keys": []
+    },
+    {
+      "case": "unmatched",
+      "lineitem_rows": 36,
+      "per_order_quantity_sums": {
+        "1": "101",
+        "2": "88",
+        "3": "67",
+        "4": "111",
+        "5": "111",
+        "6": "111",
+        "7": "111",
+        "8": "111",
+        "9": "111"
+      },
+      "per_order_line_counts": {
+        "1": 4,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 4
+      },
+      "maximum_quantity_sum": "111",
+      "qualifying_order_keys": []
+    }
+  ]
+}

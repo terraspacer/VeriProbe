@@ -1,0 +1,54 @@
+{
+  "rbot:dsb:query010_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:tpch:query18_0": {
+    "dsn": "user=mcts_read dbname=tpch10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query081_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query038_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query069_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query014_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query065_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query087_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:dsb:query100_0": {
+    "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:calcite:testDecorrelateTwoExists": {
+    "dsn": "user=mcts_read dbname=calcite10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:calcite:testIsNullPushDown": {
+    "dsn": "user=mcts_read dbname=calcite10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:tpch:query12_0": {
+    "dsn": "user=mcts_read dbname=tpch10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  },
+  "rbot:tpch:query19_0": {
+    "dsn": "user=mcts_read dbname=tpch10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+    "search_path": "public"
+  }
+}

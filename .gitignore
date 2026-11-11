@@ -1,0 +1,15 @@
+.venv/
+.venv-*/
+.cache/
+.local/
+.runtime/
+vendor/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+.env
+results/**/plans/
+# Reconstructible writable upstream copies; receipts and emitted SQL stay visible.
+results/**/runtime/*
+!results/**/runtime/runtime_compatibility.json

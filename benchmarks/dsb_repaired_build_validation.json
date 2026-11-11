@@ -1,0 +1,219 @@
+{
+  "format_version": 1,
+  "all_passed": false,
+  "eligible_for_published_generation": false,
+  "source_url": "https://github.com/microsoft/dsb",
+  "source_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+  "source_unmodified": false,
+  "patch_path": "benchmarks/dsb_generator_memset.patch",
+  "patch_sha256": "fc3ce2176e54c6c23255f8e183d567e6db68cd16ed59e544716542c75428cf08",
+  "patched_source_sha256": "4b4ce0fae66721d66f32df145d57d999ddc9b594d235715c0a8e414a1946a887",
+  "adaptation": "Change the erroneous int-buffer memset length from sizeof(char*) to sizeof(int)",
+  "compiler_flags": "-O2 -g -Wall -fcommon",
+  "executable_sha256": "e38c522b6f505021dc95e9b4c4a19d5d1815e810cb2a18dfb982aef8abdf6a0a",
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "qualifications": {
+    "1": {
+      "all_24_benchmark_tables_byte_identical": false,
+      "tables": {
+        "call_center": {
+          "sha256": "d581b05ef1dce4dd1396b73cc8a12a5047a4fae38268ccb8360220d5117043c1",
+          "original_sha256": "d581b05ef1dce4dd1396b73cc8a12a5047a4fae38268ccb8360220d5117043c1",
+          "match": true,
+          "bytes": 1831
+        },
+        "catalog_page": {
+          "sha256": "13399a0819f5e513996bf9124a9d6b51e809d3841c6a9958c4be9d6f216c96a2",
+          "original_sha256": "13399a0819f5e513996bf9124a9d6b51e809d3841c6a9958c4be9d6f216c96a2",
+          "match": true,
+          "bytes": 1619984
+        },
+        "catalog_returns": {
+          "sha256": "c0a21ce199d4710bde3cd3a2c8eaf0a5efcfc0a0b11e3f3ddd44fe3c27b99960",
+          "original_sha256": "c0a21ce199d4710bde3cd3a2c8eaf0a5efcfc0a0b11e3f3ddd44fe3c27b99960",
+          "match": true,
+          "bytes": 31536028
+        },
+        "catalog_sales": {
+          "sha256": "3fa9667f82ced0fd71d81d8cfd7645098517dd81666eee33b44d080d6a3d17d2",
+          "original_sha256": "3fa9667f82ced0fd71d81d8cfd7645098517dd81666eee33b44d080d6a3d17d2",
+          "match": true,
+          "bytes": 292018033
+        },
+        "customer": {
+          "sha256": "113da7b4d4a2a06b7174df29cf90dc9313df8d3246b773c3b4c1821ab06683c0",
+          "original_sha256": "113da7b4d4a2a06b7174df29cf90dc9313df8d3246b773c3b4c1821ab06683c0",
+          "match": true,
+          "bytes": 13061771
+        },
+        "customer_address": {
+          "sha256": "3b52512632ca308564e9ef44f5f8220f3ba2661c28bc83336ecfddde3f9adc8e",
+          "original_sha256": "3b52512632ca308564e9ef44f5f8220f3ba2661c28bc83336ecfddde3f9adc8e",
+          "match": true,
+          "bytes": 5506206
+        },
+        "customer_demographics": {
+          "sha256": "55c63a5e5a1fd0a319da1d5b19664b16f2df76c5cfe4dc862386b761016e181c",
+          "original_sha256": "55c63a5e5a1fd0a319da1d5b19664b16f2df76c5cfe4dc862386b761016e181c",
+          "match": true,
+          "bytes": 78739296
+        },
+        "date_dim": {
+          "sha256": "3daa146ffbb2dadc8477bdf20dafde503d26cf79b42249d9f5db5b808dfec333",
+          "original_sha256": "3daa146ffbb2dadc8477bdf20dafde503d26cf79b42249d9f5db5b808dfec333",
+          "match": true,
+          "bytes": 10244389
+        },
+        "household_demographics": {
+          "sha256": "b7f57bb122fd8710287ada44f2bfb31716e8f61ea9c89061490d6c27bd9e8a9e",
+          "original_sha256": "b7f57bb122fd8710287ada44f2bfb31716e8f61ea9c89061490d6c27bd9e8a9e",
+          "match": true,
+          "bytes": 144453
+        },
+        "income_band": {
+          "sha256": "6e188887e61a74e09f5a3fd9f12ae991b60c78c5ab3460ddac3028d71641c163",
+          "original_sha256": "6e188887e61a74e09f5a3fd9f12ae991b60c78c5ab3460ddac3028d71641c163",
+          "match": true,
+          "bytes": 308
+        },
+        "inventory": {
+          "sha256": "cb37d31a8329584ccbe1c331a27aecf2b7722b70e894e1228f54df8ad12c2a98",
+          "original_sha256": "cb37d31a8329584ccbe1c331a27aecf2b7722b70e894e1228f54df8ad12c2a98",
+          "match": true,
+          "bytes": 225071147
+        },
+        "item": {
+          "sha256": "a701166487fd261e3f8201199a502e4c1cc6fe92f5be585e3903f806b7c2701e",
+          "original_sha256": "2530f41324a13f5222ab772b69a42861066ef42be954ac1642f63a77b5f12e18",
+          "match": false,
+          "bytes": 5021697
+        },
+        "promotion": {
+          "sha256": "635de0af569a0a39402beb99c4afd958a2ba5cac1095de05643c6b155c42a59c",
+          "original_sha256": "635de0af569a0a39402beb99c4afd958a2ba5cac1095de05643c6b155c42a59c",
+          "match": true,
+          "bytes": 37075
+        },
+        "reason": {
+          "sha256": "cc0d28616ddbfda4dc2e6c2cecf09cff936055da136401c7bbe5c8d751697cd5",
+          "original_sha256": "cc0d28616ddbfda4dc2e6c2cecf09cff936055da136401c7bbe5c8d751697cd5",
+          "match": true,
+          "bytes": 1304
+        },
+        "ship_mode": {
+          "sha256": "14deaeac296d8c1645b8c8b5abfdc480697ad6fcbaa2dd6a99c011e9512edc19",
+          "original_sha256": "14deaeac296d8c1645b8c8b5abfdc480697ad6fcbaa2dd6a99c011e9512edc19",
+          "match": true,
+          "bytes": 1042
+        },
+        "store": {
+          "sha256": "4e2af305f59f4684ab186d3cb420b1b6bde46f67f4ab02f12d827b5edbfee671",
+          "original_sha256": "4e2af305f59f4684ab186d3cb420b1b6bde46f67f4ab02f12d827b5edbfee671",
+          "match": true,
+          "bytes": 3349
+        },
+        "store_returns": {
+          "sha256": "10e6800959fbc6fe45ea878fa17cef9e94b11587cf64b366c7d7b3a973f16618",
+          "original_sha256": "10e6800959fbc6fe45ea878fa17cef9e94b11587cf64b366c7d7b3a973f16618",
+          "match": true,
+          "bytes": 81350497
+        },
+        "store_sales": {
+          "sha256": "3dc00d928deffb95232505fad33489333e52f0ce02ad8c5cf233f657f9a92bd5",
+          "original_sha256": "3dc00d928deffb95232505fad33489333e52f0ce02ad8c5cf233f657f9a92bd5",
+          "match": true,
+          "bytes": 387526264
+        },
+        "time_dim": {
+          "sha256": "800bc4ae5531e5f3ef71e8d50ec8b7b7b8946082ef891309444ab669f75a6e75",
+          "original_sha256": "800bc4ae5531e5f3ef71e8d50ec8b7b7b8946082ef891309444ab669f75a6e75",
+          "match": true,
+          "bytes": 5021380
+        },
+        "warehouse": {
+          "sha256": "93ca0f807c32d330aa460c39670aa52015fe9fae6c70827cc5cd1e16f6d6cf88",
+          "original_sha256": "93ca0f807c32d330aa460c39670aa52015fe9fae6c70827cc5cd1e16f6d6cf88",
+          "match": true,
+          "bytes": 611
+        },
+        "web_page": {
+          "sha256": "b151011c484a640111dcf90d576555ae3aaf0e10b9017db8e4f7fc2fafc4d21b",
+          "original_sha256": "b151011c484a640111dcf90d576555ae3aaf0e10b9017db8e4f7fc2fafc4d21b",
+          "match": true,
+          "bytes": 5726
+        },
+        "web_returns": {
+          "sha256": "63187f9856693c3c7ae5eb12b1d8743e5a0d814d76e03f71c093f63ea6614b15",
+          "original_sha256": "63187f9856693c3c7ae5eb12b1d8743e5a0d814d76e03f71c093f63ea6614b15",
+          "match": true,
+          "bytes": 19328832
+        },
+        "web_sales": {
+          "sha256": "9de0b1abf1cd2bf5a32519be945491f9d2a2df36fec1d5d80fc3a8d2e2600a99",
+          "original_sha256": "9de0b1abf1cd2bf5a32519be945491f9d2a2df36fec1d5d80fc3a8d2e2600a99",
+          "match": true,
+          "bytes": 145784065
+        },
+        "web_site": {
+          "sha256": "23ec9c6e587b18f7a5cb682725fc862b0f7d786e9a35c337e18da1ae8eb5a9e3",
+          "original_sha256": "23ec9c6e587b18f7a5cb682725fc862b0f7d786e9a35c337e18da1ae8eb5a9e3",
+          "match": true,
+          "bytes": 8556
+        }
+      },
+      "command": [
+        "/workspace/VeriProbe/.local/generators/dsb-optimized/code/tools/dsdgen",
+        "-scale",
+        "1",
+        "-terminate",
+        "N",
+        "-force",
+        "Y",
+        "-dir",
+        "/workspace/VeriProbe/.runtime/data/qualification/dsb-optimized-sf1",
+        "-rngseed",
+        "0"
+      ],
+      "reused_prior_run": true,
+      "elapsed_s": 14.612,
+      "dbgen_version": {
+        "candidate_sha256": "e6b86df87dc905d0ab0e3bcd829699444e2cff4c98024b7294abc9f64258d1b7",
+        "original_sha256": "4fd6562588346641fad383444bb7681ecec62d9edc4c755459556a4de9a09945",
+        "version_equal": true,
+        "candidate_fields": [
+          "2.11.0",
+          "2026-10-26",
+          "11:07:44",
+          "-scale 1 -terminate N -force Y -dir /workspace/VeriProbe/.runtime/data/qualification/dsb-optimized-sf1 -rngseed 0 "
+        ],
+        "original_fields": [
+          "2.11.0",
+          "2026-10-26",
+          "10:18:27",
+          "-scale 1 -terminate N -force Y -dir /workspace/VeriProbe/.runtime/data/development/dsb -rngseed 0 "
+        ],
+        "excluded_from_benchmark_table_byte_equality": true,
+        "reason": "dbgen_version records wall-clock creation date/time and invocation paths"
+      },
+      "item_differences": [
+        {
+          "row_number": 1,
+          "fields": [
+            {
+              "column_position": 8,
+              "original": "0",
+              "candidate": "6006002"
+            },
+            {
+              "column_position": 10,
+              "original": "0",
+              "candidate": "6"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started": "2026-10-26T18:09:02.285192+00:00",
+  "decision": "Reject candidate; retain original source and executable for published SF50 generation"
+}

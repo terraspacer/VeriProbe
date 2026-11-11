@@ -1,0 +1,20 @@
+{
+  "status": "running",
+  "expected_queries": 102,
+  "completed_queries": 44,
+  "cache_seed_entries": 375,
+  "started_at": "2026-11-01T04:01:34.458261+00:00",
+  "output": "/workspace/VeriProbe/results/icde_full_suite_calcite10",
+  "cache": "/workspace/VeriProbe/results/icde_sql_measurement_cache_master.jsonl",
+  "live_postgresql": true,
+  "rollout_budgets": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "current_query_index": 45,
+  "last_query_id": "rbot:calcite:testMinReuseDistinctAttrWithMixedOptionality",
+  "cache_entries": 453
+}

@@ -1,0 +1,9 @@
+{
+  "interruption_rolls_back_data_and_restores_original_schema": true,
+  "copy_and_rebuild_commit_with_exact_original_catalog": true,
+  "duplicate_key_rejects_and_rolls_back_entire_transaction": true,
+  "format_version": 1,
+  "all_passed": true,
+  "time": "2026-10-26T18:02:16.605168+00:00",
+  "fixture_removed": true
+}

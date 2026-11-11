@@ -1,0 +1,1378 @@
+{
+  "format_version": 1,
+  "profile": "published",
+  "databases": {
+    "tpch10": {
+      "dbname": "tpch10",
+      "benchmark": "tpch",
+      "scale": 10,
+      "dsn": "user=mcts_read dbname=tpch10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/gregrahn/tpch-kit",
+        "generator_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "readiness_report": ".runtime/datasets/tpch10.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": true
+      }
+    }
+  },
+  "timeout_ms": 300000,
+  "budgets": [
+    16
+  ],
+  "seed": 0,
+  "strict": true,
+  "measurement_runs": 3,
+  "warmups": 1,
+  "mini_dbs": {
+    "calcite": [
+      {
+        "name": "empty",
+        "rows_inserted": 0,
+        "rows_by_table": {
+          "emp": 0,
+          "dept": 0,
+          "bonus": 0,
+          "empnullables": 0,
+          "empnullables_20": 0,
+          "emp_b": 0
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "deptno": 34,
+          "sal": 15,
+          "x": 6,
+          "u": 1,
+          "empno": 6,
+          "dname": 1,
+          "ename": 1,
+          "job": 1,
+          "name": 1
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_b492b5ddaa7a4ed89c62e551740b9193",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "d27dac9e29f8c3bdbf948c63752ff4f7328c8c50f165438ca1fa6786c7bd219e",
+        "case_features": [],
+        "profiles": [
+          "global_literals"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 43,
+          "catalog_sha256": "fff7fdd548756e2671df1f5416cf68ac3e012d123edcc36492fd903b62f7cf29"
+        }
+      },
+      {
+        "name": "null",
+        "rows_inserted": 27,
+        "rows_by_table": {
+          "emp": 3,
+          "dept": 3,
+          "bonus": 12,
+          "empnullables": 3,
+          "empnullables_20": 3,
+          "emp_b": 3
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "deptno": 34,
+          "sal": 15,
+          "x": 6,
+          "u": 1,
+          "empno": 6,
+          "dname": 1,
+          "ename": 1,
+          "job": 1,
+          "name": 1
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_92d74b35dfa94176803f5c5094677593",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "2f4389970a3e8df0d7d2377075d8075dec94831dae662171332966a9d4101729",
+        "case_features": [],
+        "profiles": [
+          "global_literals"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 43,
+          "catalog_sha256": "fff7fdd548756e2671df1f5416cf68ac3e012d123edcc36492fd903b62f7cf29"
+        }
+      },
+      {
+        "name": "duplicate",
+        "rows_inserted": 31,
+        "rows_by_table": {
+          "emp": 3,
+          "dept": 3,
+          "bonus": 13,
+          "empnullables": 4,
+          "empnullables_20": 4,
+          "emp_b": 4
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "deptno": 34,
+          "sal": 15,
+          "x": 6,
+          "u": 1,
+          "empno": 6,
+          "dname": 1,
+          "ename": 1,
+          "job": 1,
+          "name": 1
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_0091aa1077c84c6ea2583168f09316ec",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "57c5f05adc69d66683c625274b65872157c8cfb0d60d10d5cef4463562464dea",
+        "case_features": [
+          {
+            "kind": "exact_duplicate",
+            "table": "bonus",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "duplicate_payload_with_distinct_key",
+            "table": "empnullables",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "duplicate_payload_with_distinct_key",
+            "table": "empnullables_20",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "duplicate_payload_with_distinct_key",
+            "table": "emp_b",
+            "profile": "global_literals"
+          }
+        ],
+        "profiles": [
+          "global_literals"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 43,
+          "catalog_sha256": "fff7fdd548756e2671df1f5416cf68ac3e012d123edcc36492fd903b62f7cf29"
+        }
+      },
+      {
+        "name": "skew",
+        "rows_inserted": 27,
+        "rows_by_table": {
+          "emp": 3,
+          "dept": 3,
+          "bonus": 12,
+          "empnullables": 3,
+          "empnullables_20": 3,
+          "emp_b": 3
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "deptno": 34,
+          "sal": 15,
+          "x": 6,
+          "u": 1,
+          "empno": 6,
+          "dname": 1,
+          "ename": 1,
+          "job": 1,
+          "name": 1
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_b8aee1e830bc4dafa9ae3e819fde8318",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "25ffc8d3420a430a5d5a02f3de01fd6c843074b27e4fb6191cb0cf2d18ea38aa",
+        "case_features": [],
+        "profiles": [
+          "global_literals"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 43,
+          "catalog_sha256": "fff7fdd548756e2671df1f5416cf68ac3e012d123edcc36492fd903b62f7cf29"
+        }
+      },
+      {
+        "name": "unmatched",
+        "rows_inserted": 28,
+        "rows_by_table": {
+          "emp": 3,
+          "dept": 4,
+          "bonus": 12,
+          "empnullables": 3,
+          "empnullables_20": 3,
+          "emp_b": 3
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "deptno": 34,
+          "sal": 15,
+          "x": 6,
+          "u": 1,
+          "empno": 6,
+          "dname": 1,
+          "ename": 1,
+          "job": 1,
+          "name": 1
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_a6f779f209a248999e5b9dc4695cdc35",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "0e0f39907ef51cb94c948c91131ae1e1d91e78b60291cd13f085fe07bb0fdde5",
+        "case_features": [
+          {
+            "kind": "unmatched_join_key",
+            "column": "dept.deptno",
+            "value": 900000,
+            "profile": "global_literals"
+          }
+        ],
+        "profiles": [
+          "global_literals"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 43,
+          "catalog_sha256": "fff7fdd548756e2671df1f5416cf68ac3e012d123edcc36492fd903b62f7cf29"
+        }
+      }
+    ],
+    "dsb": [
+      {
+        "name": "empty",
+        "rows_inserted": 0,
+        "rows_by_table": {
+          "dbgen_version": 0,
+          "customer_address": 0,
+          "customer_demographics": 0,
+          "date_dim": 0,
+          "warehouse": 0,
+          "ship_mode": 0,
+          "time_dim": 0,
+          "reason": 0,
+          "income_band": 0,
+          "item": 0,
+          "store": 0,
+          "call_center": 0,
+          "customer": 0,
+          "web_site": 0,
+          "store_returns": 0,
+          "household_demographics": 0,
+          "web_page": 0,
+          "promotion": 0,
+          "catalog_page": 0,
+          "inventory": 0,
+          "catalog_returns": 0,
+          "web_returns": 0,
+          "web_sales": 0,
+          "catalog_sales": 0,
+          "store_sales": 0
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "c_birth_year": 58,
+          "c_birth_month": 14,
+          "cd_gender": 2,
+          "cd_education_status": 7,
+          "cd_marital_status": 5,
+          "d_year": 7,
+          "s_state": 31,
+          "ctr_reason_sk": 43,
+          "i_manager_id": 98,
+          "ca_county": 25,
+          "i_category": 10,
+          "d_moy": 14,
+          "ss_net_profit": 18,
+          "hd_dep_count": 5,
+          "ca_state": 39,
+          "ss_sales_price": 12,
+          "ca_country": 1,
+          "ss_wholesale_cost": 81,
+          "cs_wholesale_cost": 84,
+          "ws_wholesale_cost": 85,
+          "d_dom": 12,
+          "d_qoy": 5,
+          "web_sales": 3,
+          "store_sales": 3,
+          "ss_list_price": 110,
+          "ws_list_price": 119,
+          "i_color": 10,
+          "d_date": 121,
+          "i_manufact_id": 103,
+          "cs_list_price": 118,
+          "d_month_seq": 38,
+          "inv_quantity_on_hand": 30,
+          "cov": 3,
+          "cr_reason_sk": 68,
+          "wholesale_cost": 21,
+          "i_class": 5,
+          "d_day_name": 7,
+          "syear": 5,
+          "p_channel_radio": 2,
+          "p_channel_tv": 2,
+          "p_channel_email": 2,
+          "i_current_price": 16,
+          "cd_dep_count": 10,
+          "hd_buy_potential": 11,
+          "sales_cnt": 3,
+          "wr_reason_sk": 70,
+          "sr_reason_sk": 67,
+          "p_channel_event": 2,
+          "p_channel_press": 2,
+          "ib_lower_bound": 15,
+          "ca_city": 5,
+          "ws_net_profit": 18,
+          "ws_sales_price": 12,
+          "ca_gmt_offset": 3,
+          "web_gmt_offset": 5,
+          "w_gmt_offset": 3,
+          "cc_class": 2,
+          "sm_type": 5,
+          "hd_income_band_sk": 16,
+          "d_dow": 6
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_eb2a4d97b31f47d48aa73a28c5c4c86b",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "9f6f9f6aea744369324437faa2dce9e374b79ffd807f10cfbfb9975d4564c5b5",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:dsb:query032_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 429,
+          "catalog_sha256": "3d730178185dca2c1c91cd76cba485d63c6578220498a382c0ce8b76eb2252dc"
+        }
+      },
+      {
+        "name": "null",
+        "rows_inserted": 288,
+        "rows_by_table": {
+          "dbgen_version": 24,
+          "customer_address": 6,
+          "customer_demographics": 6,
+          "date_dim": 6,
+          "warehouse": 6,
+          "ship_mode": 6,
+          "time_dim": 6,
+          "reason": 6,
+          "income_band": 6,
+          "item": 6,
+          "store": 6,
+          "call_center": 6,
+          "customer": 6,
+          "web_site": 6,
+          "store_returns": 18,
+          "household_demographics": 6,
+          "web_page": 6,
+          "promotion": 6,
+          "catalog_page": 6,
+          "inventory": 54,
+          "catalog_returns": 18,
+          "web_returns": 18,
+          "web_sales": 18,
+          "catalog_sales": 18,
+          "store_sales": 18
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "c_birth_year": 58,
+          "c_birth_month": 14,
+          "cd_gender": 2,
+          "cd_education_status": 7,
+          "cd_marital_status": 5,
+          "d_year": 7,
+          "s_state": 31,
+          "ctr_reason_sk": 43,
+          "i_manager_id": 98,
+          "ca_county": 25,
+          "i_category": 10,
+          "d_moy": 14,
+          "ss_net_profit": 18,
+          "hd_dep_count": 5,
+          "ca_state": 39,
+          "ss_sales_price": 12,
+          "ca_country": 1,
+          "ss_wholesale_cost": 81,
+          "cs_wholesale_cost": 84,
+          "ws_wholesale_cost": 85,
+          "d_dom": 12,
+          "d_qoy": 5,
+          "web_sales": 3,
+          "store_sales": 3,
+          "ss_list_price": 110,
+          "ws_list_price": 119,
+          "i_color": 10,
+          "d_date": 121,
+          "i_manufact_id": 103,
+          "cs_list_price": 118,
+          "d_month_seq": 38,
+          "inv_quantity_on_hand": 30,
+          "cov": 3,
+          "cr_reason_sk": 68,
+          "wholesale_cost": 21,
+          "i_class": 5,
+          "d_day_name": 7,
+          "syear": 5,
+          "p_channel_radio": 2,
+          "p_channel_tv": 2,
+          "p_channel_email": 2,
+          "i_current_price": 16,
+          "cd_dep_count": 10,
+          "hd_buy_potential": 11,
+          "sales_cnt": 3,
+          "wr_reason_sk": 70,
+          "sr_reason_sk": 67,
+          "p_channel_event": 2,
+          "p_channel_press": 2,
+          "ib_lower_bound": 15,
+          "ca_city": 5,
+          "ws_net_profit": 18,
+          "ws_sales_price": 12,
+          "ca_gmt_offset": 3,
+          "web_gmt_offset": 5,
+          "w_gmt_offset": 3,
+          "cc_class": 2,
+          "sm_type": 5,
+          "hd_income_band_sk": 16,
+          "d_dow": 6
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_69dd80cbc478469c82a05502e6deaadf",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "35d27633106e0062c79c70d40c2b117bf2b41439cab691f7b035a5f3a6ba2958",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:dsb:query032_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 429,
+          "catalog_sha256": "3d730178185dca2c1c91cd76cba485d63c6578220498a382c0ce8b76eb2252dc"
+        }
+      },
+      {
+        "name": "duplicate",
+        "rows_inserted": 292,
+        "rows_by_table": {
+          "dbgen_version": 26,
+          "customer_address": 6,
+          "customer_demographics": 6,
+          "date_dim": 6,
+          "warehouse": 6,
+          "ship_mode": 6,
+          "time_dim": 8,
+          "reason": 6,
+          "income_band": 6,
+          "item": 6,
+          "store": 6,
+          "call_center": 6,
+          "customer": 6,
+          "web_site": 6,
+          "store_returns": 18,
+          "household_demographics": 6,
+          "web_page": 6,
+          "promotion": 6,
+          "catalog_page": 6,
+          "inventory": 54,
+          "catalog_returns": 18,
+          "web_returns": 18,
+          "web_sales": 18,
+          "catalog_sales": 18,
+          "store_sales": 18
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "c_birth_year": 58,
+          "c_birth_month": 14,
+          "cd_gender": 2,
+          "cd_education_status": 7,
+          "cd_marital_status": 5,
+          "d_year": 7,
+          "s_state": 31,
+          "ctr_reason_sk": 43,
+          "i_manager_id": 98,
+          "ca_county": 25,
+          "i_category": 10,
+          "d_moy": 14,
+          "ss_net_profit": 18,
+          "hd_dep_count": 5,
+          "ca_state": 39,
+          "ss_sales_price": 12,
+          "ca_country": 1,
+          "ss_wholesale_cost": 81,
+          "cs_wholesale_cost": 84,
+          "ws_wholesale_cost": 85,
+          "d_dom": 12,
+          "d_qoy": 5,
+          "web_sales": 3,
+          "store_sales": 3,
+          "ss_list_price": 110,
+          "ws_list_price": 119,
+          "i_color": 10,
+          "d_date": 121,
+          "i_manufact_id": 103,
+          "cs_list_price": 118,
+          "d_month_seq": 38,
+          "inv_quantity_on_hand": 30,
+          "cov": 3,
+          "cr_reason_sk": 68,
+          "wholesale_cost": 21,
+          "i_class": 5,
+          "d_day_name": 7,
+          "syear": 5,
+          "p_channel_radio": 2,
+          "p_channel_tv": 2,
+          "p_channel_email": 2,
+          "i_current_price": 16,
+          "cd_dep_count": 10,
+          "hd_buy_potential": 11,
+          "sales_cnt": 3,
+          "wr_reason_sk": 70,
+          "sr_reason_sk": 67,
+          "p_channel_event": 2,
+          "p_channel_press": 2,
+          "ib_lower_bound": 15,
+          "ca_city": 5,
+          "ws_net_profit": 18,
+          "ws_sales_price": 12,
+          "ca_gmt_offset": 3,
+          "web_gmt_offset": 5,
+          "w_gmt_offset": 3,
+          "cc_class": 2,
+          "sm_type": 5,
+          "hd_income_band_sk": 16,
+          "d_dow": 6
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_0c32985bfae541fb825f19b8124cbc22",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "9ace49b595af325772d1b2267ecfe199da8c626a6d0b2aba7314e65990996845",
+        "case_features": [
+          {
+            "kind": "exact_duplicate",
+            "table": "dbgen_version",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "duplicate_payload_with_distinct_key",
+            "table": "time_dim",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "dbgen_version",
+            "profile": "rbot:dsb:query032_0"
+          },
+          {
+            "kind": "duplicate_payload_with_distinct_key",
+            "table": "time_dim",
+            "profile": "rbot:dsb:query032_0"
+          }
+        ],
+        "profiles": [
+          "global_literals",
+          "rbot:dsb:query032_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 429,
+          "catalog_sha256": "3d730178185dca2c1c91cd76cba485d63c6578220498a382c0ce8b76eb2252dc"
+        }
+      },
+      {
+        "name": "skew",
+        "rows_inserted": 288,
+        "rows_by_table": {
+          "dbgen_version": 24,
+          "customer_address": 6,
+          "customer_demographics": 6,
+          "date_dim": 6,
+          "warehouse": 6,
+          "ship_mode": 6,
+          "time_dim": 6,
+          "reason": 6,
+          "income_band": 6,
+          "item": 6,
+          "store": 6,
+          "call_center": 6,
+          "customer": 6,
+          "web_site": 6,
+          "store_returns": 18,
+          "household_demographics": 6,
+          "web_page": 6,
+          "promotion": 6,
+          "catalog_page": 6,
+          "inventory": 54,
+          "catalog_returns": 18,
+          "web_returns": 18,
+          "web_sales": 18,
+          "catalog_sales": 18,
+          "store_sales": 18
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "c_birth_year": 58,
+          "c_birth_month": 14,
+          "cd_gender": 2,
+          "cd_education_status": 7,
+          "cd_marital_status": 5,
+          "d_year": 7,
+          "s_state": 31,
+          "ctr_reason_sk": 43,
+          "i_manager_id": 98,
+          "ca_county": 25,
+          "i_category": 10,
+          "d_moy": 14,
+          "ss_net_profit": 18,
+          "hd_dep_count": 5,
+          "ca_state": 39,
+          "ss_sales_price": 12,
+          "ca_country": 1,
+          "ss_wholesale_cost": 81,
+          "cs_wholesale_cost": 84,
+          "ws_wholesale_cost": 85,
+          "d_dom": 12,
+          "d_qoy": 5,
+          "web_sales": 3,
+          "store_sales": 3,
+          "ss_list_price": 110,
+          "ws_list_price": 119,
+          "i_color": 10,
+          "d_date": 121,
+          "i_manufact_id": 103,
+          "cs_list_price": 118,
+          "d_month_seq": 38,
+          "inv_quantity_on_hand": 30,
+          "cov": 3,
+          "cr_reason_sk": 68,
+          "wholesale_cost": 21,
+          "i_class": 5,
+          "d_day_name": 7,
+          "syear": 5,
+          "p_channel_radio": 2,
+          "p_channel_tv": 2,
+          "p_channel_email": 2,
+          "i_current_price": 16,
+          "cd_dep_count": 10,
+          "hd_buy_potential": 11,
+          "sales_cnt": 3,
+          "wr_reason_sk": 70,
+          "sr_reason_sk": 67,
+          "p_channel_event": 2,
+          "p_channel_press": 2,
+          "ib_lower_bound": 15,
+          "ca_city": 5,
+          "ws_net_profit": 18,
+          "ws_sales_price": 12,
+          "ca_gmt_offset": 3,
+          "web_gmt_offset": 5,
+          "w_gmt_offset": 3,
+          "cc_class": 2,
+          "sm_type": 5,
+          "hd_income_band_sk": 16,
+          "d_dow": 6
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_a3f8652d8d83403dbd2e7d7e290da7b8",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "d81338b495763a9dad75edbfdfbff74b3c0b32a63194e00b6a0fe48130364b18",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:dsb:query032_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 429,
+          "catalog_sha256": "3d730178185dca2c1c91cd76cba485d63c6578220498a382c0ce8b76eb2252dc"
+        }
+      },
+      {
+        "name": "unmatched",
+        "rows_inserted": 290,
+        "rows_by_table": {
+          "dbgen_version": 24,
+          "customer_address": 6,
+          "customer_demographics": 6,
+          "date_dim": 6,
+          "warehouse": 6,
+          "ship_mode": 6,
+          "time_dim": 6,
+          "reason": 6,
+          "income_band": 6,
+          "item": 6,
+          "store": 6,
+          "call_center": 6,
+          "customer": 6,
+          "web_site": 6,
+          "store_returns": 18,
+          "household_demographics": 6,
+          "web_page": 6,
+          "promotion": 6,
+          "catalog_page": 6,
+          "inventory": 54,
+          "catalog_returns": 20,
+          "web_returns": 18,
+          "web_sales": 18,
+          "catalog_sales": 18,
+          "store_sales": 18
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "c_birth_year": 58,
+          "c_birth_month": 14,
+          "cd_gender": 2,
+          "cd_education_status": 7,
+          "cd_marital_status": 5,
+          "d_year": 7,
+          "s_state": 31,
+          "ctr_reason_sk": 43,
+          "i_manager_id": 98,
+          "ca_county": 25,
+          "i_category": 10,
+          "d_moy": 14,
+          "ss_net_profit": 18,
+          "hd_dep_count": 5,
+          "ca_state": 39,
+          "ss_sales_price": 12,
+          "ca_country": 1,
+          "ss_wholesale_cost": 81,
+          "cs_wholesale_cost": 84,
+          "ws_wholesale_cost": 85,
+          "d_dom": 12,
+          "d_qoy": 5,
+          "web_sales": 3,
+          "store_sales": 3,
+          "ss_list_price": 110,
+          "ws_list_price": 119,
+          "i_color": 10,
+          "d_date": 121,
+          "i_manufact_id": 103,
+          "cs_list_price": 118,
+          "d_month_seq": 38,
+          "inv_quantity_on_hand": 30,
+          "cov": 3,
+          "cr_reason_sk": 68,
+          "wholesale_cost": 21,
+          "i_class": 5,
+          "d_day_name": 7,
+          "syear": 5,
+          "p_channel_radio": 2,
+          "p_channel_tv": 2,
+          "p_channel_email": 2,
+          "i_current_price": 16,
+          "cd_dep_count": 10,
+          "hd_buy_potential": 11,
+          "sales_cnt": 3,
+          "wr_reason_sk": 70,
+          "sr_reason_sk": 67,
+          "p_channel_event": 2,
+          "p_channel_press": 2,
+          "ib_lower_bound": 15,
+          "ca_city": 5,
+          "ws_net_profit": 18,
+          "ws_sales_price": 12,
+          "ca_gmt_offset": 3,
+          "web_gmt_offset": 5,
+          "w_gmt_offset": 3,
+          "cc_class": 2,
+          "sm_type": 5,
+          "hd_income_band_sk": 16,
+          "d_dow": 6
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_0e0e8c84a3cf4503bc678df9c5a95639",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "af8a45a7558b277e88f7bb6fd7fbe4d0ccd65a69c7c93a24f36db10e68051b87",
+        "case_features": [
+          {
+            "kind": "unmatched_join_key",
+            "column": "catalog_returns.cr_item_sk",
+            "value": 900000,
+            "profile": "global_literals"
+          },
+          {
+            "kind": "unmatched_join_key",
+            "column": "catalog_returns.cr_item_sk",
+            "value": 900001,
+            "profile": "rbot:dsb:query032_0"
+          }
+        ],
+        "profiles": [
+          "global_literals",
+          "rbot:dsb:query032_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 429,
+          "catalog_sha256": "3d730178185dca2c1c91cd76cba485d63c6578220498a382c0ce8b76eb2252dc"
+        }
+      }
+    ],
+    "tpch": [
+      {
+        "name": "empty",
+        "rows_inserted": 0,
+        "rows_by_table": {
+          "nation": 0,
+          "region": 0,
+          "part": 0,
+          "supplier": 0,
+          "partsupp": 0,
+          "customer": 0,
+          "orders": 0,
+          "lineitem": 0
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "r_name": 5,
+          "p_type": 23,
+          "p_size": 50,
+          "l_shipdate": 50,
+          "o_orderdate": 46,
+          "c_mktsegment": 3,
+          "l_quantity": 23,
+          "n_name": 18,
+          "nation": 4,
+          "p_name": 20,
+          "l_returnflag": 1,
+          "l_receiptdate": 12,
+          "o_orderpriority": 2,
+          "l_shipmode": 7,
+          "o_comment": 8,
+          "p_brand": 15,
+          "s_comment": 2,
+          "p_container": 15,
+          "l_shipinstruct": 1,
+          "o_orderstatus": 1,
+          "c_acctbal": 3
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_aa011217aa724fed8a7260519f15dc88",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "72139046064d7fcba6264b96b3022b7ba97a45be4fb89de83b6d568834a5ce0d",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:tpch:query17_0",
+          "rbot:tpch:query20_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 61,
+          "catalog_sha256": "026fe7d961a559faf1d213a5d70cd13bc575d2e50dbf609cab20f7bc1676a115"
+        }
+      },
+      {
+        "name": "null",
+        "rows_inserted": 288,
+        "rows_by_table": {
+          "nation": 36,
+          "region": 36,
+          "part": 36,
+          "supplier": 36,
+          "partsupp": 36,
+          "customer": 36,
+          "orders": 36,
+          "lineitem": 36
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "r_name": 5,
+          "p_type": 23,
+          "p_size": 50,
+          "l_shipdate": 50,
+          "o_orderdate": 46,
+          "c_mktsegment": 3,
+          "l_quantity": 23,
+          "n_name": 18,
+          "nation": 4,
+          "p_name": 20,
+          "l_returnflag": 1,
+          "l_receiptdate": 12,
+          "o_orderpriority": 2,
+          "l_shipmode": 7,
+          "o_comment": 8,
+          "p_brand": 15,
+          "s_comment": 2,
+          "p_container": 15,
+          "l_shipinstruct": 1,
+          "o_orderstatus": 1,
+          "c_acctbal": 3
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_2b2b908e48484229898f658f57af62b7",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "e2e8ad5fa34259f1df641b8a9db8c2bdb31313023e1841474f098419295a8af0",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:tpch:query17_0",
+          "rbot:tpch:query20_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 61,
+          "catalog_sha256": "026fe7d961a559faf1d213a5d70cd13bc575d2e50dbf609cab20f7bc1676a115"
+        }
+      },
+      {
+        "name": "duplicate",
+        "rows_inserted": 312,
+        "rows_by_table": {
+          "nation": 39,
+          "region": 39,
+          "part": 39,
+          "supplier": 39,
+          "partsupp": 39,
+          "customer": 39,
+          "orders": 39,
+          "lineitem": 39
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "r_name": 5,
+          "p_type": 23,
+          "p_size": 50,
+          "l_shipdate": 50,
+          "o_orderdate": 46,
+          "c_mktsegment": 3,
+          "l_quantity": 23,
+          "n_name": 18,
+          "nation": 4,
+          "p_name": 20,
+          "l_returnflag": 1,
+          "l_receiptdate": 12,
+          "o_orderpriority": 2,
+          "l_shipmode": 7,
+          "o_comment": 8,
+          "p_brand": 15,
+          "s_comment": 2,
+          "p_container": 15,
+          "l_shipinstruct": 1,
+          "o_orderstatus": 1,
+          "c_acctbal": 3
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_dd7d6fa4771e411abab928763ea2b05d",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "25c2f00388dd6a6b54c9b15d4436609309990b718660e27036e93ed5b0cc865a",
+        "case_features": [
+          {
+            "kind": "exact_duplicate",
+            "table": "nation",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "region",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "part",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "supplier",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "partsupp",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "customer",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "orders",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "lineitem",
+            "profile": "global_literals"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "nation",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "region",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "part",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "supplier",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "partsupp",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "customer",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "orders",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "lineitem",
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "nation",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "region",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "part",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "supplier",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "partsupp",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "customer",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "orders",
+            "profile": "rbot:tpch:query20_0"
+          },
+          {
+            "kind": "exact_duplicate",
+            "table": "lineitem",
+            "profile": "rbot:tpch:query20_0"
+          }
+        ],
+        "profiles": [
+          "global_literals",
+          "rbot:tpch:query17_0",
+          "rbot:tpch:query20_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 61,
+          "catalog_sha256": "026fe7d961a559faf1d213a5d70cd13bc575d2e50dbf609cab20f7bc1676a115"
+        }
+      },
+      {
+        "name": "skew",
+        "rows_inserted": 288,
+        "rows_by_table": {
+          "nation": 36,
+          "region": 36,
+          "part": 36,
+          "supplier": 36,
+          "partsupp": 36,
+          "customer": 36,
+          "orders": 36,
+          "lineitem": 36
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "r_name": 5,
+          "p_type": 23,
+          "p_size": 50,
+          "l_shipdate": 50,
+          "o_orderdate": 46,
+          "c_mktsegment": 3,
+          "l_quantity": 23,
+          "n_name": 18,
+          "nation": 4,
+          "p_name": 20,
+          "l_returnflag": 1,
+          "l_receiptdate": 12,
+          "o_orderpriority": 2,
+          "l_shipmode": 7,
+          "o_comment": 8,
+          "p_brand": 15,
+          "s_comment": 2,
+          "p_container": 15,
+          "l_shipinstruct": 1,
+          "o_orderstatus": 1,
+          "c_acctbal": 3
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_84389d2d981c489e97f7b1b5f8d3c39f",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "7ff80dfbd16fe43b9063924eddee780b7cf7754cd09e8e1256618d82f7f78324",
+        "case_features": [],
+        "profiles": [
+          "global_literals",
+          "rbot:tpch:query17_0",
+          "rbot:tpch:query20_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 61,
+          "catalog_sha256": "026fe7d961a559faf1d213a5d70cd13bc575d2e50dbf609cab20f7bc1676a115"
+        }
+      },
+      {
+        "name": "unmatched",
+        "rows_inserted": 291,
+        "rows_by_table": {
+          "nation": 36,
+          "region": 36,
+          "part": 36,
+          "supplier": 36,
+          "partsupp": 36,
+          "customer": 39,
+          "orders": 36,
+          "lineitem": 36
+        },
+        "constraint_rejections": 0,
+        "literal_pool_sizes": {
+          "r_name": 5,
+          "p_type": 23,
+          "p_size": 50,
+          "l_shipdate": 50,
+          "o_orderdate": 46,
+          "c_mktsegment": 3,
+          "l_quantity": 23,
+          "n_name": 18,
+          "nation": 4,
+          "p_name": 20,
+          "l_returnflag": 1,
+          "l_receiptdate": 12,
+          "o_orderpriority": 2,
+          "l_shipmode": 7,
+          "o_comment": 8,
+          "p_brand": 15,
+          "s_comment": 2,
+          "p_container": 15,
+          "l_shipinstruct": 1,
+          "o_orderstatus": 1,
+          "c_acctbal": 3
+        },
+        "dsn": "host=/workspace/VeriProbe/.runtime/socket port=55432 dbname=mcts_fixtures user=mcts_read",
+        "search_path": "mcts_mini_6856006647a94d43b802964698e84fc9",
+        "rejection_details": [],
+        "coverage_complete": true,
+        "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+        "generator": "join-aware-v1",
+        "fixture_data_sha256": "0551e74621808540138eadb5374b74a9609ec0a21b785f60d97e9e8c34be4426",
+        "case_features": [
+          {
+            "kind": "unmatched_join_key",
+            "column": "customer.c_custkey",
+            "value": 900000,
+            "profile": "global_literals"
+          },
+          {
+            "kind": "unmatched_join_key",
+            "column": "customer.c_custkey",
+            "value": 900001,
+            "profile": "rbot:tpch:query17_0"
+          },
+          {
+            "kind": "unmatched_join_key",
+            "column": "customer.c_custkey",
+            "value": 900002,
+            "profile": "rbot:tpch:query20_0"
+          }
+        ],
+        "profiles": [
+          "global_literals",
+          "rbot:tpch:query17_0",
+          "rbot:tpch:query20_0"
+        ],
+        "catalog_validation": {
+          "source_types_match": true,
+          "primary_keys_match": true,
+          "column_count": 61,
+          "catalog_sha256": "026fe7d961a559faf1d213a5d70cd13bc575d2e50dbf609cab20f7bc1676a115"
+        }
+      }
+    ]
+  },
+  "verification_mode": "hybrid",
+  "model": {
+    "type": "http",
+    "model": "gpt-6.1-sol",
+    "endpoint": "http://127.0.0.1:0/v1/chat/completions",
+    "timeout": 600,
+    "api_key_env": "MCTS_SESSION_BRIDGE_SECRET"
+  },
+  "comparison_mode": "stream_hash",
+  "max_rows": null,
+  "max_result_bytes": null,
+  "fixture_evidence": "configs/miniatures-join-aware.json",
+  "baseline_policy": "fresh",
+  "wait_for_quiet_before_task": true,
+  "quiet_wait_timeout_seconds": 600,
+  "quiet_poll_seconds": 15,
+  "host_pressure_sample_seconds": 10,
+  "maximum_idle_memory_pressure_percent": 1,
+  "suite_wait_timeout_seconds": 86400,
+  "host_competing_units": [
+    "mcts-rbot-local-minilm-20261026",
+    "mcts-rbot-local-minilm-validation",
+    "mcts-session-probe-v3",
+    "mcts-session-probe-v4",
+    "mcts-session-published-probe",
+    "mcts-postload-maintenance",
+    "mcts-calcite-plan-inventory"
+  ],
+  "verification_databases": {
+    "tpch": {
+      "dbname": "tpch_dev",
+      "benchmark": "tpch",
+      "scale": 0.01,
+      "dsn": "user=mcts_read dbname=tpch_dev host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "development",
+        "generator_url": "https://github.com/gregrahn/tpch-kit",
+        "generator_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "readiness_report": ".runtime/datasets/tpch_dev.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": false
+      },
+      "purpose": "Finite correctness test data; published-size latency remains on the designated performance database"
+    },
+    "dsb": {
+      "dbname": "dsb_dev",
+      "benchmark": "dsb",
+      "scale": 1,
+      "dsn": "user=mcts_read dbname=dsb_dev host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "development",
+        "generator_url": "https://github.com/microsoft/dsb",
+        "generator_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "readiness_report": ".runtime/datasets/dsb_dev.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": false
+      },
+      "purpose": "Finite correctness test data; published-size latency remains on the designated performance database"
+    },
+    "calcite": {
+      "dbname": "calcite_dev",
+      "benchmark": "calcite",
+      "scale": 10000,
+      "distribution": "uniform",
+      "dsn": "user=mcts_read dbname=calcite_dev host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "development",
+        "generator_url": "https://github.com/eidos06/SlabCity",
+        "generator_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "readiness_report": ".runtime/datasets/calcite_dev.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "rows per main table",
+        "publication_scale": false
+      },
+      "purpose": "Finite correctness test data; published-size latency remains on the designated performance database"
+    }
+  },
+  "purpose": "Partial TPCH10 M16 tuning after dataset readiness and host quiet preflight; native outputs generated earlier under recorded conditions; no final performance claim",
+  "verification_timeout_ms": 30000,
+  "ablations": [
+    "full"
+  ],
+  "final_performance_claim_allowed": false,
+  "postgres_service_unit": "mcts-rewrite-postgres.service",
+  "maximum_idle_io_pressure_percent": 2,
+  "maximum_idle_cpu_pressure_percent": 20,
+  "maintenance_readiness_report": "benchmarks/postload_maintenance.json"
+}

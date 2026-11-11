@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "all_passed": true,
+  "rows": 100000,
+  "integer_sum": 4999950000,
+  "source_bytes": 1777780,
+  "maximum_write_block_bytes": 131072,
+  "exact_copy_command_tag_verified": true,
+  "independent_temp_table_aggregate_verified": true,
+  "time": "2026-10-26T18:37:43.139287+00:00"
+}

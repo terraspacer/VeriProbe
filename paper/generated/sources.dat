@@ -1,0 +1,6 @@
+label macro rule quite hint rewritehint
+Dev 8 4 4 5 1
+{TPC-H held-out} 4 4 0 0 0
+{Calcite held-out} 4 11 0 0 0
+Zipf 6 6 1 0 1
+{SF 50} 0 0 2 0 1

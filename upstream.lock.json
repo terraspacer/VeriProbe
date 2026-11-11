@@ -1,0 +1,22 @@
+{
+  "postgres": {
+    "version": "14.13",
+    "source": "https://ftp.postgresql.org/pub/source/v14.13/postgresql-14.13.tar.bz2",
+    "sha256": "59aa3c4b495ab26a9ec69f3ad0a0228c51f0fe6facf3634dfad4d1197d613a56"
+  },
+  "repositories": {
+    "LLM4Rewrite": {
+      "url": "https://github.com/curtis-sun/LLM4Rewrite.git",
+      "commit": "c9c90e5d7867888c3aaba86e4fc9e6d48f53b375"
+    },
+    "QUITE": {
+      "url": "https://github.com/Yuyang-Song/QUITE.git",
+      "commit": "d0dd6ee567adde144cd8a7024a657c9329231092"
+    },
+    "pg_hint_plan": {
+      "url": "https://github.com/ossc-db/pg_hint_plan.git",
+      "commit": "3b58a184a41602aa5e163562320d8979c35e6586",
+      "tag": "REL14_1_4_3"
+    }
+  }
+}

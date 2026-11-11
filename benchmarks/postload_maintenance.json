@@ -1,0 +1,333 @@
+{
+  "format_version": 1,
+  "observed": "2026-10-26T21:38:51.565543+00:00",
+  "data_ready": true,
+  "quiet": false,
+  "active_autovacuum": [
+    {
+      "database": "calcite10zipf",
+      "query": "autovacuum: VACUUM public.bonus",
+      "phase": "scanning heap",
+      "scanned_blocks": 246655,
+      "total_blocks": 324606
+    },
+    {
+      "database": "calcite10",
+      "query": "autovacuum: VACUUM public.bonus",
+      "phase": "scanning heap",
+      "scanned_blocks": 231133,
+      "total_blocks": 317056
+    },
+    {
+      "database": "dsb50",
+      "query": "autovacuum: VACUUM public.store_sales",
+      "phase": "scanning heap",
+      "scanned_blocks": 608350,
+      "total_blocks": 2565794
+    }
+  ],
+  "pending_insert_vacuum_tables": [
+    {
+      "database": "tpch50",
+      "table": "lineitem",
+      "heap_bytes": 46072823808,
+      "inserts_since_vacuum": 300005811,
+      "estimated_rows": 299978200.0,
+      "all_visible_pages": 0,
+      "pages": 5624124,
+      "last_autovacuum": null
+    },
+    {
+      "database": "tpch50",
+      "table": "partsupp",
+      "heap_bytes": 7143153664,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 40006632.0,
+      "all_visible_pages": 0,
+      "pages": 871967,
+      "last_autovacuum": null
+    },
+    {
+      "database": "tpch50",
+      "table": "part",
+      "heap_bytes": 1677688832,
+      "inserts_since_vacuum": 10000000,
+      "estimated_rows": 10000339.0,
+      "all_visible_pages": 0,
+      "pages": 204796,
+      "last_autovacuum": null
+    },
+    {
+      "database": "tpch50",
+      "table": "customer",
+      "heap_bytes": 1467416576,
+      "inserts_since_vacuum": 7500000,
+      "estimated_rows": 7499767.0,
+      "all_visible_pages": 0,
+      "pages": 179128,
+      "last_autovacuum": null
+    },
+    {
+      "database": "tpch50",
+      "table": "orders",
+      "heap_bytes": 10687537152,
+      "inserts_since_vacuum": 75000000,
+      "estimated_rows": 75009280.0,
+      "all_visible_pages": 0,
+      "pages": 1304631,
+      "last_autovacuum": null
+    },
+    {
+      "database": "tpch50",
+      "table": "supplier",
+      "heap_bytes": 90800128,
+      "inserts_since_vacuum": 500000,
+      "estimated_rows": 500000.0,
+      "all_visible_pages": 0,
+      "pages": 11084,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "item",
+      "heap_bytes": 57622528,
+      "inserts_since_vacuum": 102000,
+      "estimated_rows": 102000.0,
+      "all_visible_pages": 0,
+      "pages": 7034,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "web_sales",
+      "heap_bytes": 1512620032,
+      "inserts_since_vacuum": 7199166,
+      "estimated_rows": 7198695.0,
+      "all_visible_pages": 0,
+      "pages": 184646,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "store_sales",
+      "heap_bytes": 4179525632,
+      "inserts_since_vacuum": 28802256,
+      "estimated_rows": 28800376.0,
+      "all_visible_pages": 0,
+      "pages": 510196,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "time_dim",
+      "heap_bytes": 11444224,
+      "inserts_since_vacuum": 86400,
+      "estimated_rows": 86400.0,
+      "all_visible_pages": 0,
+      "pages": 1397,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "inventory",
+      "heap_bytes": 5894258688,
+      "inserts_since_vacuum": 133110000,
+      "estimated_rows": 133110090.0,
+      "all_visible_pages": 0,
+      "pages": 719514,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "web_returns",
+      "heap_bytes": 215097344,
+      "inserts_since_vacuum": 1440360,
+      "estimated_rows": 1440360.0,
+      "all_visible_pages": 0,
+      "pages": 26257,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb10",
+      "table": "store_returns",
+      "heap_bytes": 967909376,
+      "inserts_since_vacuum": 7202325,
+      "estimated_rows": 7201882.0,
+      "all_visible_pages": 0,
+      "pages": 118153,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "catalog_sales",
+      "heap_bytes": 15134588928,
+      "inserts_since_vacuum": 71986075,
+      "estimated_rows": 71982224.0,
+      "all_visible_pages": 0,
+      "pages": 1847484,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "item",
+      "heap_bytes": 34676736,
+      "inserts_since_vacuum": 62000,
+      "estimated_rows": 62000.0,
+      "all_visible_pages": 0,
+      "pages": 4233,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "web_sales",
+      "heap_bytes": 7558004736,
+      "inserts_since_vacuum": 35999114,
+      "estimated_rows": 35999580.0,
+      "all_visible_pages": 0,
+      "pages": 922608,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "inventory",
+      "heap_bytes": 2508029952,
+      "inserts_since_vacuum": 56638827,
+      "estimated_rows": 56638860.0,
+      "all_visible_pages": 0,
+      "pages": 306156,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "store_returns",
+      "heap_bytes": 4875468800,
+      "inserts_since_vacuum": 36002583,
+      "estimated_rows": 35999948.0,
+      "all_visible_pages": 0,
+      "pages": 595150,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "household_demographics",
+      "heap_bytes": 434176,
+      "inserts_since_vacuum": 7200,
+      "estimated_rows": 7200.0,
+      "all_visible_pages": 0,
+      "pages": 53,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "catalog_returns",
+      "heap_bytes": 1758617600,
+      "inserts_since_vacuum": 10795355,
+      "estimated_rows": 10795748.0,
+      "all_visible_pages": 0,
+      "pages": 214675,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "store_sales",
+      "heap_bytes": 21018984448,
+      "inserts_since_vacuum": 144012046,
+      "estimated_rows": 144015360.0,
+      "all_visible_pages": 0,
+      "pages": 2565794,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "web_returns",
+      "heap_bytes": 1073094656,
+      "inserts_since_vacuum": 7201594,
+      "estimated_rows": 7200663.0,
+      "all_visible_pages": 0,
+      "pages": 130993,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "customer",
+      "heap_bytes": 173555712,
+      "inserts_since_vacuum": 766000,
+      "estimated_rows": 766000.0,
+      "all_visible_pages": 0,
+      "pages": 21186,
+      "last_autovacuum": null
+    },
+    {
+      "database": "dsb50",
+      "table": "time_dim",
+      "heap_bytes": 11444224,
+      "inserts_since_vacuum": 86400,
+      "estimated_rows": 86400.0,
+      "all_visible_pages": 0,
+      "pages": 1397,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10",
+      "table": "emp_b",
+      "heap_bytes": 3582492672,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 39997316.0,
+      "all_visible_pages": 0,
+      "pages": 437316,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10",
+      "table": "empnullables",
+      "heap_bytes": 3376947200,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 39999372.0,
+      "all_visible_pages": 0,
+      "pages": 412225,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10",
+      "table": "bonus",
+      "heap_bytes": 2597322752,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 40000704.0,
+      "all_visible_pages": 0,
+      "pages": 317056,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10zipf",
+      "table": "bonus",
+      "heap_bytes": 2659172352,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 40000968.0,
+      "all_visible_pages": 0,
+      "pages": 324606,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10zipf",
+      "table": "empnullables",
+      "heap_bytes": 3385483264,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 39997728.0,
+      "all_visible_pages": 0,
+      "pages": 413267,
+      "last_autovacuum": null
+    },
+    {
+      "database": "calcite10zipf",
+      "table": "emp_b",
+      "heap_bytes": 3608059904,
+      "inserts_since_vacuum": 40000000,
+      "estimated_rows": 39999664.0,
+      "all_visible_pages": 0,
+      "pages": 440437,
+      "last_autovacuum": null
+    }
+  ],
+  "pending_heap_bytes": 153334276096,
+  "interpretation": "Pending candidates use default insert-trigger threshold 1000 + 0.2*estimated_rows; this includes currently active tables and is a metadata estimate, not a dataset scan."
+}

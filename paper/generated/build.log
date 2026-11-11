@@ -1,0 +1,125 @@
+wrote 1272 macros
+
+== dev n=30  original mean [168.8, 168.8] censored=10 live=0
+   rbot  mean [63.5, 138.2] red L/U 62.4/18.2% rewrites=15 live=6 vs_orig={'same': 15, 'faster': 7, 'undetermined': 8} | ours_vs={'faster': 14, 'same': 10, 'undetermined': 6} | guarded=[63.5, 121.6]
+   quite mean [99.4, 127.4] red L/U 41.1/24.5% rewrites=12 live=1 vs_orig={'faster': 9, 'undetermined': 3, 'same': 18} | ours_vs={'faster': 15, 'undetermined': 3, 'same': 10, 'within': 2} | guarded=[99.4, 127.4]
+   mcts  mean [62.3, 62.3] red L/U 63.1/63.1% rewrites=22 live=0 vs_orig={'faster': 22, 'same': 8}
+   sources: {'macro': 8, 'rule': 4, 'fallback': 8, 'quite': 4, 'hint': 5, 'rewrite_hint': 1} | evidence: {'differential': 16, 'syntactic': 5, 'structural': 1} | pool/accepted: 260 211
+   var full_mcts                    mean [62.3, 62.3] {'faster': 22, 'same': 8}
+   var class_a_symbolic_only        mean [108.6, 108.6] {'same': 21, 'faster': 9}
+   var class_b_macro_only           mean [63.6, 63.6] {'faster': 22, 'same': 8}
+   var without_plan_bottleneck      mean [85.4, 85.4] {'faster': 16, 'same': 14}
+   var without_critic               mean [67.6, 67.6] {'faster': 22, 'same': 8}
+   var without_canary_safety_gate   mean [102.1, 120.8] {'faster': 13, 'same': 15, 'undetermined': 2}
+   budget improved: [18, 21, 21, 22, 22] mean_U: [79.8, 71.7, 71.5, 62.3, 62.3]
+
+== tpchHeld n=97  original mean [106.3, 106.3] censored=20 live=95
+   rbot  mean [89.7, 97.8] red L/U 15.6/7.9% rewrites=6 live=4 vs_orig={'undetermined': 3, 'faster': 3, 'same': 91} | ours_vs={'undetermined': 3, 'same': 87, 'faster': 6, 'slower': 1} | guarded=[89.7, 97.8]
+   quite mean [102.9, 131.8] red L/U 3.1/-24.1% rewrites=11 live=0 vs_orig={'same': 86, 'undetermined': 11} | ours_vs={'same': 78, 'faster': 8, 'undetermined': 11} | guarded=[102.9, 106.3]
+   mcts  mean [100.0, 100.0] red L/U 5.9/5.9% rewrites=8 live=7 vs_orig={'same': 89, 'faster': 8}
+   sources: {'fallback': 89, 'rule': 4, 'macro': 4} | evidence: {'differential': 8} | pool/accepted: 203 65
+   var full_mcts                    mean [97.5, 97.5] {'same': 88, 'faster': 9}
+   var class_a_symbolic_only        mean [97.7, 97.7] {'same': 92, 'faster': 5}
+   var class_b_macro_only           mean [100.0, 100.0] {'same': 90, 'faster': 7}
+   var without_plan_bottleneck      mean [97.7, 97.7] {'same': 91, 'faster': 6}
+   var without_critic               mean [97.3, 100.4] {'same': 87, 'faster': 9, 'undetermined': 1}
+   var without_canary_safety_gate   mean [62.4, 155.2] {'undetermined': 35, 'faster': 8, 'same': 54}
+   budget improved: [8, 8, 9, 9, 9] mean_U: [99.9, 99.9, 97.5, 97.5, 97.5]
+
+== calciteHeld n=34  original mean [98.5, 98.5] censored=10 live=34
+   rbot  mean [28.2, 52.0] red L/U 71.4/47.2% rewrites=12 live=9 vs_orig={'same': 22, 'undetermined': 3, 'faster': 9} | ours_vs={'same': 22, 'undetermined': 3, 'faster': 8, 'within': 1} | guarded=[28.2, 43.2]
+   quite mean [74.7, 89.7] red L/U 24.2/8.9% rewrites=5 live=3 vs_orig={'same': 29, 'faster': 2, 'undetermined': 2, 'slower': 1} | ours_vs={'same': 18, 'faster': 14, 'undetermined': 1, 'within': 1} | guarded=[74.5, 89.5]
+   mcts  mean [40.8, 40.8] red L/U 58.6/58.6% rewrites=15 live=15 vs_orig={'same': 19, 'faster': 15}
+   sources: {'fallback': 19, 'rule': 11, 'macro': 4} | evidence: {'differential': 15} | pool/accepted: 88 51
+   var full_mcts                    mean [40.8, 40.8] {'same': 19, 'faster': 15}
+   var class_a_symbolic_only        mean [42.0, 42.0] {'same': 20, 'faster': 14}
+   var class_b_macro_only           mean [50.1, 50.1] {'same': 20, 'faster': 14}
+   var without_plan_bottleneck      mean [42.3, 42.3] {'same': 20, 'faster': 14}
+   var without_critic               mean [41.3, 41.3] {'same': 19, 'faster': 15}
+   var without_canary_safety_gate   mean [19.6, 75.2] {'same': 15, 'undetermined': 7, 'faster': 11, 'within': 1}
+   budget improved: [12, 13, 15, 15, 15] mean_U: [41.8, 41.5, 40.8, 40.8, 40.8]
+
+== heldAll n=131  original mean [104.3, 104.3] censored=30 live=129
+   rbot  mean [73.7, 85.9] red L/U 29.3/17.6% rewrites=18 live=13 vs_orig={'undetermined': 6, 'faster': 12, 'same': 113} | ours_vs={'undetermined': 6, 'same': 109, 'faster': 14, 'slower': 1, 'within': 1} | guarded=[73.7, 83.6]
+   quite mean [95.6, 120.9] red L/U 8.3/-16.0% rewrites=16 live=3 vs_orig={'same': 115, 'undetermined': 13, 'faster': 2, 'slower': 1} | ours_vs={'same': 96, 'faster': 22, 'undetermined': 12, 'within': 1} | guarded=[95.5, 101.9]
+   mcts  mean [84.6, 84.6] red L/U 18.8/18.8% rewrites=23 live=22 vs_orig={'same': 108, 'faster': 23}
+   sources: {'fallback': 108, 'rule': 15, 'macro': 8} | evidence: {'differential': 23} | pool/accepted: 291 116
+   var full_mcts                    mean [82.8, 82.8] {'same': 107, 'faster': 24}
+   var class_a_symbolic_only        mean [83.3, 83.3] {'same': 112, 'faster': 19}
+   var class_b_macro_only           mean [87.0, 87.0] {'same': 110, 'faster': 21}
+   var without_plan_bottleneck      mean [83.3, 83.3] {'same': 111, 'faster': 20}
+   var without_critic               mean [82.8, 85.1] {'same': 106, 'faster': 24, 'undetermined': 1}
+   var without_canary_safety_gate   mean [51.3, 134.4] {'undetermined': 42, 'faster': 19, 'same': 69, 'within': 1}
+   budget improved: [20, 21, 24, 24, 24] mean_U: [84.8, 84.7, 82.8, 82.8, 82.8]
+
+== zipf n=30  original mean [133.9, 133.9] censored=10 live=30
+   rbot  mean [74.4, 101.3] red L/U 44.5/24.3% rewrites=12 live=9 vs_orig={'same': 18, 'faster': 8, 'undetermined': 3, 'slower': 1} | ours_vs={'same': 19, 'faster': 9, 'undetermined': 2} | guarded=[74.2, 88.6]
+   quite mean [100.8, 109.3] red L/U 24.7/18.3% rewrites=7 live=6 vs_orig={'same': 23, 'faster': 5, 'undetermined': 1, 'slower': 1} | ours_vs={'same': 16, 'faster': 11, 'undetermined': 1, 'within': 2} | guarded=[100.6, 109.1]
+   mcts  mean [55.9, 55.9] red L/U 58.2/58.2% rewrites=14 live=14 vs_orig={'same': 16, 'faster': 14}
+   sources: {'fallback': 16, 'rewrite_hint': 1, 'macro': 6, 'rule': 6, 'quite': 1} | evidence: {'differential': 13, 'structural': 1} | pool/accepted: 93 55
+   var full_mcts                    mean [55.9, 55.9] {'same': 16, 'faster': 14}
+   var class_a_symbolic_only        mean [81.5, 81.5] {'same': 19, 'faster': 11}
+   var class_b_macro_only           mean [64.2, 64.2] {'same': 17, 'faster': 13}
+   var without_plan_bottleneck      mean [56.7, 56.7] {'same': 16, 'faster': 13, 'slower': 1}
+   var without_critic               mean [56.7, 56.7] {'same': 16, 'faster': 13, 'slower': 1}
+   var without_canary_safety_gate   mean [48.1, 78.6] {'same': 13, 'faster': 13, 'undetermined': 4}
+   budget improved: [13, 14, 14, 14, 14] mean_U: [62.4, 55.8, 56.0, 55.9, 55.9]
+
+== uniformSame n=30  original mean [137.2, 137.2] censored=11 live=21
+   rbot  mean [34.4, 89.4] red L/U 74.9/34.9% rewrites=15 live=5 vs_orig={'same': 15, 'undetermined': 6, 'faster': 9} | ours_vs={'same': 18, 'undetermined': 5, 'faster': 7} | guarded=[34.4, 74.2]
+   quite mean [77.2, 112.8] red L/U 43.7/17.8% rewrites=9 live=2 vs_orig={'same': 21, 'faster': 5, 'undetermined': 4} | ours_vs={'same': 14, 'faster': 11, 'within': 2, 'undetermined': 3} | guarded=[77.2, 112.8]
+   mcts  mean [48.6, 48.6] red L/U 64.6/64.6% rewrites=15 live=6 vs_orig={'same': 15, 'faster': 15}
+   sources: {'fallback': 15, 'rewrite_hint': 1, 'rule': 9, 'macro': 4, 'quite': 1} | evidence: {'differential': 14, 'structural': 1} | pool/accepted: 102 72
+   var full_mcts                    mean [48.6, 48.6] {'same': 15, 'faster': 15}
+   var class_a_symbolic_only        mean [60.5, 60.5] {'same': 17, 'faster': 13}
+   var class_b_macro_only           mean [59.5, 59.5] {'same': 16, 'faster': 14}
+   var without_plan_bottleneck      mean [62.5, 62.5] {'same': 16, 'faster': 14}
+   var without_critic               mean [53.5, 53.5] {'same': 15, 'faster': 15}
+   var without_canary_safety_gate   mean [43.0, 87.8] {'same': 14, 'faster': 10, 'undetermined': 5, 'within': 1}
+   budget improved: [11, 13, 14, 15, 15] mean_U: [64.9, 58.4, 57.8, 48.6, 48.6]
+
+== sfFifty n=20  original mean [223.4, 277.4] censored=16 live=19
+   rbot  mean [208.5, 279.0] red L/U 6.7/-0.6% rewrites=2 live=0 vs_orig={'same': 18, 'undetermined': 2} | ours_vs={'faster': 2, 'undetermined': 1, 'same': 17} | guarded=[208.5, 277.4]
+   quite mean [185.3, 263.3] red L/U 17.0/5.1% rewrites=6 live=1 vs_orig={'faster': 2, 'undetermined': 4, 'same': 14} | ours_vs={'faster': 2, 'same': 14, 'undetermined': 4} | guarded=[185.3, 263.3]
+   mcts  mean [202.4, 247.4] red L/U 9.4/10.8% rewrites=3 live=1 vs_orig={'faster': 3, 'same': 17}
+   sources: {'quite': 2, 'fallback': 17, 'rewrite_hint': 1} | evidence: {'differential': 3} | pool/accepted: 75 62
+   var full_mcts                    mean [202.4, 247.4] {'faster': 3, 'same': 17}
+   var class_a_symbolic_only        mean [223.4, 277.4] {'same': 20}
+   var class_b_macro_only           mean [202.4, 247.4] {'faster': 3, 'same': 17}
+   var without_plan_bottleneck      mean [203.9, 248.9] {'faster': 3, 'same': 17}
+   var without_critic               mean [203.9, 248.9] {'faster': 3, 'same': 16, 'within': 1}
+   var without_canary_safety_gate   mean [50.0, 254.0] {'faster': 3, 'undetermined': 16, 'within': 1}
+   budget improved: [3, 3, 3, 3, 3] mean_U: [248.9, 248.9, 247.2, 247.4, 247.4]
+
+== sfTenSame n=20  original mean [143.7, 143.7] censored=5 live=0
+   rbot  mean [83.9, 153.9] red L/U 41.6/-7.1% rewrites=6 live=5 vs_orig={'same': 14, 'faster': 1, 'undetermined': 5} | ours_vs={'faster': 8, 'same': 8, 'undetermined': 4} | guarded=[83.9, 136.9]
+   quite mean [103.5, 117.5] red L/U 28.0/18.2% rewrites=6 live=0 vs_orig={'faster': 5, 'undetermined': 1, 'same': 14} | ours_vs={'faster': 9, 'undetermined': 1, 'same': 10} | guarded=[103.5, 117.5]
+   mcts  mean [85.4, 85.4] red L/U 40.6/40.6% rewrites=12 live=0 vs_orig={'faster': 12, 'same': 8}
+   sources: {'macro': 3, 'rule': 1, 'fallback': 8, 'quite': 3, 'hint': 5} | evidence: {'differential': 7, 'syntactic': 5} | pool/accepted: 203 159
+   var full_mcts                    mean [85.4, 85.4] {'faster': 12, 'same': 8}
+   var class_a_symbolic_only        mean [136.9, 136.9] {'same': 19, 'faster': 1}
+   var class_b_macro_only           mean [86.8, 86.8] {'faster': 12, 'same': 8}
+   var without_plan_bottleneck      mean [98.5, 98.5] {'faster': 7, 'same': 13}
+   var without_critic               mean [85.4, 85.4] {'faster': 12, 'same': 8}
+   var without_canary_safety_gate   mean [116.0, 130.0] {'faster': 7, 'same': 12, 'undetermined': 1}
+   budget improved: [11, 12, 12, 12, 12] mean_U: [86.4, 85.4, 85.4, 85.4, 85.4]
+
+break-even runs: [0.3, 0.3, 0.3, 0.3, 0.3, 0.4, 0.4, 0.4, 0.5, 0.5, 0.5, 0.5, 0.6, 0.6, 0.6, 0.7, 0.7, 0.9, 0.9, 1.0, 1.0, 1.0, 1.0, 1.1, 1.1, 1.3, 1.3, 1.4, 1.6, 1.7, 1.9, 2.0, 2.0, 2.1, 2.2, 2.7, 2.9, 3.4, 3.5, 3.6, 4.4, 5.0, 5.3, 5.4, 6.1, 6.5, 7.9, 8.5, 9.2, 10.1, 13.7, 15.8, 17.8, 18.9, 19.3, 23.0, 30.0, 31.3, 31.3, 40.8, 48.4, 49.0]
+
+claim check ok     [Abstract, I, VIII-G, XI] session, held-out: the layer is faster than QUITE replay
+claim check ok     [Abstract, I, VIII-G, XI] session, held-out: R-Bot replay is faster than the layer
+claim check ok     [VIII-G] session, held-out: the layer is faster than Original
+claim check ok     [VIII-B, VIII-G] session, held-out: more than one cut-off original is kept although a replay finishes
+claim check ok     [I, VIII-B] logs, held-out: the layer is robustly faster than QUITE replay
+claim check ok     [VIII-B] logs, held-out: the R-Bot interval contains the mean of the layer
+claim check ok     [VIII-B] logs, TPC-H held-out: R-Bot replay is robustly better than the layer
+claim check ok     [I, VIII-C] logs, Zipf: the layer is robustly faster than both replays
+claim check ok     [VIII-C] logs: the reduction on Zipf data is within 10 points of the reduction on uniform data
+claim check ok     [VIII-A] logs, Dev: the layer is robustly faster than QUITE replay
+claim check ok     [VIII-A] logs, Dev: only the lower end of the R-Bot interval is close to the layer
+claim check ok     [VIII-D] logs: a budget of one yields more than half of the final improvements
+claim check ok     [VIII-E] logs, Dev: planner cost only is robustly worse than the full policy
+claim check ok     [VIII-E] logs, held-out: the cost-only interval contains the means of Original and of the full policy
+claim check ok     [VIII-E] logs: class B carries Dev, class A carries the held-out statements
+claim check ok     [I, VIII-C next to Table IV] session, Zipf (covered pairs): the layer is faster than both replays
+claim check ok     [VIII-A next to Table IV] session, Dev (covered pairs): the layer is faster than QUITE replay

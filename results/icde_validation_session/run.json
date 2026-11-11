@@ -1,0 +1,14 @@
+{
+  "completed_pairs": 88,
+  "last_pair": [
+    "tpch50",
+    "rbot:tpch:query5_0"
+  ],
+  "planned_pairs": 47,
+  "protocol": "interleaved rounds, rotating order, equal cutoff, one cutoff ends a statement",
+  "rounds": 3,
+  "started_at": "2026-11-10T14:21:27Z",
+  "status": "completed",
+  "timeout_ms": 300000,
+  "updated_at": "2026-11-10T19:52:44Z"
+}

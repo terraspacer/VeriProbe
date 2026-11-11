@@ -1,0 +1,113 @@
+{
+  "query_id": "rbot:tpch:query18_0",
+  "source_checkpoint": "results/stage_a_sf10/queries/04_2531e71bc6082d32.json",
+  "original_sha256": "a77aa8dbeaed8671dce6dcfb04a94baf8dae412ad9d666ab38e1e16ae6b2a026",
+  "source_schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+  "candidates": [
+    {
+      "file": "quite_trace_2.sql",
+      "trace_index": 2,
+      "sha256": "977a36a2bdfe305ef3f4d4c7da9fccf3d19712646f9a9a4702c4b2fedc77cb26"
+    },
+    {
+      "file": "quite_trace_3.sql",
+      "trace_index": 3,
+      "sha256": "80d647a0734d4939079a4f9971dbf2b1425469b96809c79b730cf87c10d13ca7"
+    }
+  ],
+  "checkpoint_rejections": [
+    {
+      "trace_index": 2,
+      "accepted": false,
+      "reason": "all miniature query outputs were empty; finite evidence is vacuous",
+      "dev_rows": [
+        0,
+        0
+      ],
+      "miniature_rows": [
+        {
+          "name": "empty",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "null",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "duplicate",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "skew",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "unmatched",
+          "rows": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "trace_index": 3,
+      "accepted": false,
+      "reason": "all miniature query outputs were empty; finite evidence is vacuous",
+      "dev_rows": [
+        0,
+        0
+      ],
+      "miniature_rows": [
+        {
+          "name": "empty",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "null",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "duplicate",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "skew",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "unmatched",
+          "rows": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "purpose": "Targeted finite verification follow-up; no model calls or benchmark timing."
+}

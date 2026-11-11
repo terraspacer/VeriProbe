@@ -1,0 +1,48 @@
+% Flowchart of the selection procedure (Algorithm 1), two rows.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \foreach \i/\x in {1/1.05, 2/3.55, 3/6.05, 4/8.55, 5/11.05, 6/13.55, 7/16.05} {\coordinate (c\i) at (\x, 0);}
+  % row 1
+  \node[store, minimum width=1.95cm, minimum height=1.0cm] (n1) at (1.05, 2.3) {Verified set\\$V(q)$, time $\ell_{0}$};
+  \node[proc, minimum width=1.95cm, minimum height=1.0cm] (n2) at (3.55, 2.3) {Sort by $\pi$,\\keep first $M$};
+  \node[proc, minimum width=1.95cm, minimum height=1.0cm] (n3) at (6.05, 2.3) {Take next\\candidate $p$};
+  \node[dec, minimum width=1.95cm, minimum height=1.0cm] (n4) at (8.55, 2.3) {Time of $p$\\known?};
+  \node[dec, minimum width=1.95cm, minimum height=1.0cm] (n5) at (11.05, 2.3) {Fewer than\\two probes?};
+  \node[exec, minimum width=1.95cm, minimum height=1.0cm] (n6) at (13.55, 2.3) {Probe $p$ once,\\cutoff $c_{\mathrm{p}}$};
+  \node[dec, minimum width=1.95cm, minimum height=1.0cm] (n7) at (16.05, 2.3) {Candidates\\left?};
+  % row 2
+  \node[dec, minimum width=1.95cm, minimum height=1.0cm] (m7) at (16.05, 0) {A probe faster\\than $\ell_{0}$?};
+  \node[exec, minimum width=1.95cm, minimum height=1.0cm] (m6) at (13.55, 0) {Time $p^{\ast}$: three\\runs, cutoff $c_{\mathrm{f}}$};
+  \node[dec, minimum width=1.95cm, minimum height=1.0cm] (m5) at (11.05, 0) {$\ell(p^{\ast}) < \ell_{0}$?};
+  \node[store, minimum width=1.95cm, minimum height=1.0cm] (m4) at (8.55, 0) {Return $p^{\ast}$\\and its label};
+  \node[store, minimum width=1.95cm, minimum height=1.0cm] (m3) at (6.05, 0) {Return $q$\\(fallback)};
+
+  \draw[flow] (n1.east) -- (n2.west);
+  \draw[flow] (n2.east) -- (n3.west);
+  \draw[flow] (n3.east) -- (n4.west);
+  \draw[flow] (n4.east) -- (n5.west);
+  \node[anchor=south west, inner sep=1.5pt] at (n4.north east) {no};
+  \draw[flow] (n5.east) -- (n6.west);
+  \node[anchor=south west, inner sep=1.5pt] at (n5.north east) {yes};
+  \draw[flow] (n6.east) -- (n7.west);
+  % known time or no probe left: go on without a probe
+  \draw[flow] (n4.north) -- ++(0,0.55) -| (n7.north);
+  \node[anchor=south west, inner sep=2pt] at ([yshift=0.55cm]n4.north) {yes: reuse it};
+  \draw[line width=0.6pt] (n5.north) -- ++(0,0.55);
+  \fill ([yshift=0.55cm]n5.north) circle (1.2pt);
+  \node[anchor=south west, inner sep=2pt] at ([yshift=0.55cm]n5.north) {no: skip $p$};
+  % loop
+  \draw[flow] ([xshift=-5mm]n7.south) -- ++(0,-0.55) -| (n3.south);
+  \node[anchor=north east, inner sep=2pt] at ([xshift=-5mm,yshift=-0.55cm]n7.south) {yes};
+  \draw[flow] ([xshift=5mm]n7.south) -- node[right, inner sep=2pt] {no} ([xshift=5mm]m7.north);
+  % row 2
+  \draw[flow] (m7.west) -- (m6.east);
+  \node[anchor=south east, inner sep=1.5pt] at (m7.north west) {yes};
+  \draw[flow] (m6.west) -- (m5.east);
+  \draw[flow] (m5.west) -- (m4.east);
+  \node[anchor=south east, inner sep=1.5pt] at (m5.north west) {yes};
+  \draw[flow] (m7.south) -- ++(0,-0.5) -| (m3.south);
+  \node[anchor=north east, inner sep=2pt] at ([yshift=-0.5cm]m7.south) {no};
+  \draw[line width=0.6pt] (m5.south) -- ++(0,-0.5);
+  \fill ([yshift=-0.5cm]m5.south) circle (1.2pt);
+  \node[anchor=north east, inner sep=2pt] at ([yshift=-0.5cm]m5.south) {no};
+\end{tikzpicture}

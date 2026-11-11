@@ -1,0 +1,11 @@
+label faster within same slower undetermined
+{Dev, R-Bot} 46.67 0.00 33.33 0.00 20.00
+{Dev, QUITE} 50.00 6.67 33.33 0.00 10.00
+{TPC-H held-out, R-Bot} 6.19 0.00 89.69 1.03 3.09
+{TPC-H held-out, QUITE} 8.25 0.00 80.41 0.00 11.34
+{Calcite held-out, R-Bot} 23.53 2.94 64.71 0.00 8.82
+{Calcite held-out, QUITE} 41.18 2.94 52.94 0.00 2.94
+{Zipf, R-Bot} 30.00 0.00 63.33 0.00 6.67
+{Zipf, QUITE} 36.67 6.67 53.33 0.00 3.33
+{SF 50, R-Bot} 10.00 0.00 85.00 0.00 5.00
+{SF 50, QUITE} 10.00 0.00 70.00 0.00 20.00

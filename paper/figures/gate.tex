@@ -1,0 +1,26 @@
+% Fig. 5: decision flow of the equivalence gate.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=4.3cm] (in) at (0, 6.60) {Pair $(q, p)$ and the schema};
+  \node[dec, minimum width=4.3cm] (d0) at (0, 5.35) {One read statement each,\\approved hints only?};
+  \node[dec, minimum width=4.3cm] (d1) at (0, 4.05) {Equal results on the\\verification database?};
+  \node[dec, minimum width=4.3cm] (d2) at (0, 2.75) {Same tokens apart from\\approved planner hints?};
+  \node[dec, minimum width=4.3cm] (d3) at (0, 1.45) {Both results provably empty\\or a solver proof?};
+  \node[dec, minimum width=4.3cm] (d4) at (0, 0.15) {Five miniature databases\\agree and are not vacuous?};
+
+  \node[store, minimum width=1.65cm] (a2) at (3.55, 2.75) {Accept:\\syntactic};
+  \node[store, minimum width=1.65cm] (a3) at (3.55, 1.45) {Accept:\\formal};
+  \node[store, minimum width=1.65cm] (a4) at (3.55, 0.15) {Accept:\\bounded};
+  \node[store, minimum width=1.2cm, minimum height=6.15cm] (rej) at (-3.50, 2.75) {Reject};
+
+  \draw[flow] (in.south) -- (d0.north);
+  \draw[flow] (d0.south) -- node[right, inner sep=2pt] {yes} (d1.north);
+  \draw[flow] (d1.south) -- node[right, inner sep=2pt] {yes or cut off} (d2.north);
+  \draw[flow] (d2.south) -- node[right, inner sep=2pt] {no} (d3.north);
+  \draw[flow] (d3.south) -- node[right, inner sep=2pt] {no} (d4.north);
+  \draw[flow] (d2.east) -- node[above, inner sep=2pt] {yes} (a2.west);
+  \draw[flow] (d3.east) -- node[above, inner sep=2pt] {yes} (a3.west);
+  \draw[flow] (d4.east) -- node[above, inner sep=2pt] {yes} (a4.west);
+  \draw[flow] (d0.west) -- node[above, inner sep=2pt] {no} (d0.west -| rej.east);
+  \draw[flow] (d1.west) -- node[above, inner sep=2pt] {no} (d1.west -| rej.east);
+  \draw[flow] (d4.west) -- node[above, inner sep=2pt] {no} (d4.west -| rej.east);
+\end{tikzpicture}

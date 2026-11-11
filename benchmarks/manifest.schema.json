@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "An exact upstream executed driver input",
+  "type": "object",
+  "required": ["id", "source", "benchmark", "sql", "schema_path", "source_path", "sha256", "source_file_sha256", "source_commit", "parse_status", "duplicate_memberships"],
+  "properties": {
+    "id": {"type": "string"},
+    "source": {"enum": ["rbot", "quite"]},
+    "benchmark": {"enum": ["tpch", "dsb", "calcite"]},
+    "sql": {"type": "string"},
+    "schema_path": {"type": "string"},
+    "source_path": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_index": {"type": ["integer", "null"]},
+    "source_query_id": {"type": "string"},
+    "parse_status": {"enum": ["ok", "error"]},
+    "statement_count": {"type": ["integer", "null"]},
+    "parse_error": {"type": "string"},
+    "raw_source_sql": {"type": "string"},
+    "duplicate_memberships": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

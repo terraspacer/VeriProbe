@@ -1,0 +1,110 @@
+{
+  "format_version": 1,
+  "profile": "published",
+  "databases": {
+    "tpch10": {
+      "dbname": "tpch10",
+      "benchmark": "tpch",
+      "scale": 10,
+      "dsn": "user=mcts_read dbname=tpch10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/gregrahn/tpch-kit",
+        "generator_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "readiness_report": ".runtime/datasets/tpch10.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": true
+      }
+    },
+    "tpch50": {
+      "dbname": "tpch50",
+      "benchmark": "tpch",
+      "scale": 50,
+      "dsn": "user=mcts_read dbname=tpch50 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/gregrahn/tpch-kit",
+        "generator_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "readiness_report": ".runtime/datasets/tpch50.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": true
+      }
+    },
+    "dsb10": {
+      "dbname": "dsb10",
+      "benchmark": "dsb",
+      "scale": 10,
+      "dsn": "user=mcts_read dbname=dsb10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/microsoft/dsb",
+        "generator_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "readiness_report": ".runtime/datasets/dsb10.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": true
+      }
+    },
+    "dsb50": {
+      "dbname": "dsb50",
+      "benchmark": "dsb",
+      "scale": 50,
+      "dsn": "user=mcts_read dbname=dsb50 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/microsoft/dsb",
+        "generator_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "readiness_report": ".runtime/datasets/dsb50.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "generator scale factor",
+        "publication_scale": true
+      }
+    },
+    "calcite10": {
+      "dbname": "calcite10",
+      "benchmark": "calcite",
+      "scale": 40000000,
+      "distribution": "uniform",
+      "dsn": "user=mcts_read dbname=calcite10 host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/eidos06/SlabCity",
+        "generator_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "readiness_report": ".runtime/datasets/calcite10.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "rows per main table",
+        "publication_scale": true
+      }
+    },
+    "calcite10zipf": {
+      "dbname": "calcite10zipf",
+      "benchmark": "calcite",
+      "scale": 40000000,
+      "distribution": "zipf",
+      "dsn": "user=mcts_read dbname=calcite10zipf host=/workspace/VeriProbe/.runtime/socket port=55432",
+      "provenance": {
+        "profile": "published",
+        "generator_url": "https://github.com/eidos06/SlabCity",
+        "generator_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "readiness_report": ".runtime/datasets/calcite10zipf.json",
+        "exact_author_snapshot": false,
+        "scale_unit": "rows per main table",
+        "publication_scale": true
+      }
+    }
+  },
+  "timeout_ms": 300000,
+  "budgets": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "seed": 0,
+  "strict": true,
+  "measurement_runs": 3,
+  "warmups": 1
+}

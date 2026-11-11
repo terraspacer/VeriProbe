@@ -1,0 +1,24 @@
+% Flowchart: outcome class of execution a against execution b.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=4.6cm] (in) at (0, 4.90) {Executions $a$ and $b$ with intervals\\$(a^{L}, a^{U})$ and $(b^{L}, b^{U})$};
+  \node[dec, minimum width=4.6cm, minimum height=0.8cm] (d1) at (0, 3.68) {Identical statement text?};
+  \node[dec, minimum width=4.6cm, minimum height=0.8cm] (d2) at (0, 2.56) {$a^{U} \le (1-\theta)\, b^{L}$?};
+  \node[dec, minimum width=4.6cm, minimum height=0.8cm] (d3) at (0, 1.44) {$a^{L} \ge (1+\theta)\, b^{U}$?};
+  \node[dec, minimum width=4.6cm, minimum height=0.8cm] (d4) at (0, 0.32) {Do both executions finish?};
+  \node[store, minimum width=4.6cm] (o5) at (0, -0.75) {undetermined};
+
+  \node[store, minimum width=1.7cm] (o1) at (3.85, 3.68) {same};
+  \node[store, minimum width=1.7cm] (o2) at (3.85, 2.56) {faster};
+  \node[store, minimum width=1.7cm] (o3) at (3.85, 1.44) {slower};
+  \node[store, minimum width=1.7cm] (o4) at (3.85, 0.32) {within};
+
+  \draw[flow] (in.south) -- (d1.north);
+  \draw[flow] (d1.south) -- node[right, inner sep=3pt] {no} (d2.north);
+  \draw[flow] (d2.south) -- node[right, inner sep=3pt] {no} (d3.north);
+  \draw[flow] (d3.south) -- node[right, inner sep=3pt] {no} (d4.north);
+  \draw[flow] (d4.south) -- node[right, inner sep=3pt] {no} (o5.north);
+  \draw[flow] (d1.east) -- node[above, inner sep=2pt] {yes} (o1.west);
+  \draw[flow] (d2.east) -- node[above, inner sep=2pt] {yes} (o2.west);
+  \draw[flow] (d3.east) -- node[above, inner sep=2pt] {yes} (o3.west);
+  \draw[flow] (d4.east) -- node[above, inner sep=2pt] {yes} (o4.west);
+\end{tikzpicture}

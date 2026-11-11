@@ -1,0 +1,14 @@
+{
+  "entries": 441,
+  "method": "development-schema EXPLAIN only; no execution success inferred",
+  "counts": {
+    "rbot:tpch:ok": 44,
+    "rbot:dsb:ok": 76,
+    "rbot:calcite:ok": 44,
+    "quite:tpch:ok": 63,
+    "quite:dsb:ok": 156,
+    "quite:calcite:ok": 58
+  },
+  "failures": [],
+  "detail_path": ".runtime/inventory-validation.jsonl"
+}

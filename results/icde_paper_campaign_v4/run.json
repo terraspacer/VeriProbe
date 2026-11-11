@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "expected_queries": 30,
+  "completed_queries": 30,
+  "cache_seed_entries": 87,
+  "started_at": "2026-10-31T01:22:42.956212+00:00",
+  "output": "results/icde_paper_campaign_v4",
+  "cache": "results/icde_sql_measurement_cache_v4.jsonl",
+  "live_postgresql": true,
+  "rollout_budgets": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "current_query_index": 31,
+  "last_query_id": "rbot:calcite:testAggregateMergeSum0",
+  "cache_entries": 100,
+  "finished_at": "2026-10-31T01:53:50.987042+00:00"
+}

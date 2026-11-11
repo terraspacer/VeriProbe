@@ -1,0 +1,203 @@
+{
+  "checkpoint_rejections": [
+    {
+      "trace_index": 2,
+      "accepted": false,
+      "reason": "all miniature query outputs were empty; finite evidence is vacuous",
+      "dev_rows": [
+        0,
+        0
+      ],
+      "miniatures": [
+        {
+          "name": "empty",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "null",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "duplicate",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "skew",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "unmatched",
+          "rows": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "trace_index": 3,
+      "accepted": false,
+      "reason": "all miniature query outputs were empty; finite evidence is vacuous",
+      "dev_rows": [
+        0,
+        0
+      ],
+      "miniatures": [
+        {
+          "name": "empty",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "null",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "duplicate",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "skew",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "unmatched",
+          "rows": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "trace_index": 4,
+      "accepted": false,
+      "reason": "all miniature query outputs were empty; finite evidence is vacuous",
+      "dev_rows": [
+        0,
+        0
+      ],
+      "miniatures": [
+        {
+          "name": "empty",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "null",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "duplicate",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "skew",
+          "rows": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "unmatched",
+          "rows": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "active_generator": "join-aware-v1",
+  "active_dsb_profiles": [
+    "global_literals",
+    "rbot:dsb:query032_0"
+  ],
+  "active_dsb_requested_probes": {
+    "requested": [
+      "rbot:dsb:query032_0"
+    ],
+    "resolved": [
+      "rbot:dsb:query032_0"
+    ],
+    "missing": []
+  },
+  "county_join_group": [
+    "customer_address.ca_county",
+    "store.s_county"
+  ],
+  "county_join_sources": [
+    {
+      "left": "customer_address.ca_county",
+      "right": "store.s_county",
+      "kind": "query_ast",
+      "source_id": "rbot:dsb:query054_0",
+      "query_sha256": "b097b0a5652d8122afeae3b2ebb50e194388faaa4804953b70d110cf456bcda0",
+      "predicate": "customer_address.ca_county = store.s_county"
+    },
+    {
+      "left": "customer_address.ca_county",
+      "right": "store.s_county",
+      "kind": "query_ast",
+      "source_id": "rbot:dsb:query054_1",
+      "query_sha256": "f34fbf7e8a06d6805826795c32a9cba4155a19e34a32cb8746c14be2b9b6e7e9",
+      "predicate": "customer_address.ca_county = store.s_county"
+    },
+    {
+      "left": "customer_address.ca_county",
+      "right": "store.s_county",
+      "kind": "query_ast",
+      "source_id": "quite:dsb:79:entry079",
+      "query_sha256": "7642b5f520cb7303854185ec965276b0ee16d303edeb3b697b28ba66afceea0f",
+      "predicate": "customer_address.ca_county = store.s_county"
+    },
+    {
+      "left": "customer_address.ca_county",
+      "right": "store.s_county",
+      "kind": "query_ast",
+      "source_id": "quite:dsb:80:entry080",
+      "query_sha256": "e0ba040d99aeecd49cbe0f43c0308c7ece474c661a452bc3e109dd0099a838f7",
+      "predicate": "customer_address.ca_county = store.s_county"
+    },
+    {
+      "left": "customer_address.ca_county",
+      "right": "store.s_county",
+      "kind": "query_ast",
+      "source_id": "quite:dsb:81:entry081",
+      "query_sha256": "fe57bd29cc0071e577d02adf83b7cae152b4f7ee2105863d84915d4dcf36de61",
+      "predicate": "customer_address.ca_county = store.s_county"
+    }
+  ],
+  "diagnosis": "make_rows assigns join-group values before profile/literal choices; ca_county gets numeric text instead of an allowed county. Query010_0 has no dedicated DSB profile/probe, so conjunctions, dates, and ratios are not coordinated."
+}

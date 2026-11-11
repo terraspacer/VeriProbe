@@ -1,0 +1,20 @@
+% Order of the runs in the validation session for one pair of database and statement.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=1.90cm, minimum height=2.15cm] (in) at (0.95, 1.00) {Original $q$\\and its\\returned\\rewrites\\$r_1$, $r_2$};
+
+  \draw[dashed, line width=0.6pt] (2.25, -0.08) rectangle (5.80, 2.62);
+  \node[anchor=north, inner sep=2pt] at (4.025, 2.60) {Each run: cutoff $T_{\max}$};
+  \foreach \k/\y/\a/\b/\c in {1/1.70/q/r_1/r_2, 2/1.00/r_1/r_2/q, 3/0.30/r_2/q/r_1} {
+    \node[anchor=west, inner sep=1pt] at (2.33, \y) {Round \k};
+    \node[exec, minimum width=0.62cm, minimum height=0.55cm, inner sep=0pt] at (4.05, \y) {$\a$};
+    \node[exec, minimum width=0.62cm, minimum height=0.55cm, inner sep=0pt] at (4.72, \y) {$\b$};
+    \node[exec, minimum width=0.62cm, minimum height=0.55cm, inner sep=0pt] at (5.39, \y) {$\c$};
+  }
+
+  \node[proc, minimum width=2.45cm, minimum height=0.9cm] (med) at (7.45, 1.62) {Median of the\\three rounds};
+  \node[dec, minimum width=2.45cm, minimum height=0.9cm] (out) at (7.45, 0.38) {Outcome by \eqref{eq:outcome}};
+
+  \draw[flow] (in.east) -- (2.25, 1.00);
+  \draw[flow] (5.80, 1.62) -- (med.west);
+  \draw[flow] (med.south) -- (out.north);
+\end{tikzpicture}

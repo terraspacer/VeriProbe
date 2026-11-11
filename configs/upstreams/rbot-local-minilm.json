@@ -1,0 +1,64 @@
+{
+  "status": "ready_for_native_session_smoke",
+  "activation_environment": {
+    "RBOT_LOCAL_EMBEDDING_RUNTIME": ".cache/mcts_rewrite/rbot_local_minilm_1110a243fdf4",
+    "OPENAI_TIMEOUT": "600"
+  },
+  "requires": [
+    "local_index_build.json status ok",
+    "local_index_validation.json status ok",
+    "native session probe finished before applying patch"
+  ],
+  "patch": ".runtime/local_embeddings/core_activation.patch",
+  "changed_paths": [
+    "mcts_rewrite/local_rbot_embeddings.py",
+    "mcts_rewrite/upstream_runtime.py",
+    "mcts_rewrite/upstream_worker.py",
+    "mcts_rewrite/fresh_baselines.py"
+  ],
+  "notes": [
+    "Original 3139-d index and vendor retained",
+    "Actual CPU model and native 835-d retrieval variant labels preserved",
+    "Mutable original R-Bot case-rule data become writable copies",
+    "No API credentials needed for local embedding inference"
+  ],
+  "local_artifact_status": "built_and_independently_validated",
+  "model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "weights_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db"
+  },
+  "artifacts": {
+    "local_index_build.json": {
+      "path": ".cache/mcts_rewrite/rbot_local_minilm_1110a243fdf4/local_index_build.json",
+      "sha256": "6ecf68868ded741b1bbbafc295cc872142594d0d4ae315a8abb3eab9f74f3173"
+    },
+    "local_index_validation.json": {
+      "path": ".cache/mcts_rewrite/rbot_local_minilm_1110a243fdf4/local_index_validation.json",
+      "sha256": "2f11ea6d83b5ddf3f79a376b4abdd82cf2114e1e5cb10e35e89920e0489db538"
+    },
+    "local_index_deduplication.json": {
+      "path": ".cache/mcts_rewrite/rbot_local_minilm_1110a243fdf4/local_index_deduplication.json",
+      "sha256": "e34a0bca60051b79f1cec792c9bcf8fc3b44e9b5bf186a029770fe644ff44cf5"
+    }
+  },
+  "index": {
+    "dimension": 835,
+    "nodes": 5501,
+    "original_dimension": 3139,
+    "original_nodes": 5507,
+    "corpus_rows_encoded": 5889,
+    "truncated_unique_corpus_texts": 1680,
+    "dedup_collisions_after_truncation": 6,
+    "same_qa_reference_coverage": true
+  },
+  "native_baseline_workflow_executed": false,
+  "activation_applied": true,
+  "activation_source_sha256": {
+    "mcts_rewrite/local_rbot_embeddings.py": "9882fef3bf22e43d220cec7cd26ac59eaf313a0833567030306809d03a2b19b3",
+    "mcts_rewrite/upstream_runtime.py": "409326f7b6c0f9d5c22dd6e05b8c307890e484aa14638b860b241a1b40a79c7d",
+    "mcts_rewrite/upstream_worker.py": "e3dc06ba9dc36b6b642698ac23afc6ff1ceebe2cd06314ad6be74add11f1fd93",
+    "mcts_rewrite/fresh_baselines.py": "8be0082df6b50401efbac1212c22cdeb7421e176abf39f5e106b46ce9e2c3c4b"
+  },
+  "unit_tests_passed": 4
+}

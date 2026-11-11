@@ -1,0 +1,6 @@
+label proposed admitted returned
+Dev 260 211 22
+{TPC-H held-out} 203 65 8
+{Calcite held-out} 88 51 15
+Zipf 93 55 14
+{SF 50} 75 62 3

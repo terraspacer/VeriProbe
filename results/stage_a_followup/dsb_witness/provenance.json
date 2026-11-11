@@ -1,0 +1,27 @@
+{
+  "query_id": "rbot:dsb:query010_0",
+  "source_checkpoint": "results/stage_a_sf10/queries/02_7b6df850c6c2d99f.json",
+  "original_sha256": "62ee8e644e4abb84c0466fbcd11fca4daef8b778225114e9dc562c27a4ec8ad8",
+  "source_schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+  "candidates": [
+    {
+      "file": "quite_trace_2.sql",
+      "trace_index": 2,
+      "sha256": "12ebe826dfefa5ffb205f74e14d4d8c52b5568e719d41e54298261becc7fc790",
+      "prior_reason": "all miniature query outputs were empty; finite evidence is vacuous"
+    },
+    {
+      "file": "quite_trace_3.sql",
+      "trace_index": 3,
+      "sha256": "704daedb8fa3679eaa2ad811824fb96631d95342a6f505a073b55f3617252c21",
+      "prior_reason": "all miniature query outputs were empty; finite evidence is vacuous"
+    },
+    {
+      "file": "quite_trace_4.sql",
+      "trace_index": 4,
+      "sha256": "9b62de6e7848c883d788b35a8f9aafb23814b1a382a22282e20c6f6aeef34ba7",
+      "prior_reason": "all miniature query outputs were empty; finite evidence is vacuous"
+    }
+  ],
+  "purpose": "Targeted follow-up finite verification; no model requests or benchmark timing."
+}

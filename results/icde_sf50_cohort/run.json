@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "expected_queries": 30,
+  "completed_queries": 30,
+  "cache_seed_entries": 115,
+  "started_at": "2026-10-31T15:27:36.515179+00:00",
+  "output": "/workspace/VeriProbe/results/icde_sf50_cohort",
+  "cache": "/workspace/VeriProbe/results/icde_sql_measurement_cache_master.jsonl",
+  "live_postgresql": true,
+  "rollout_budgets": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "current_query_index": 31,
+  "last_query_id": "rbot:calcite:testAggregateMergeSum0",
+  "cache_entries": 157,
+  "finished_at": "2026-10-31T17:40:44.713645+00:00"
+}

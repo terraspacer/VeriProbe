@@ -1,0 +1,11 @@
+{
+  "atomic_server_checkpoint_recovers_lost_file_publication": true,
+  "committed_customer_preserved_without_duplicate_copy": true,
+  "uncheckpointed_partial_table_transactionally_reset": true,
+  "explicit_full_count_audit_rejects_committed_row_count_mismatch": true,
+  "format_version": 2,
+  "all_passed": true,
+  "time": "2026-10-26T18:33:55.484352+00:00",
+  "fixture_removed": true,
+  "default_count_method": "Atomic same-transaction COPY/source counts for dedicated task-owned tables; full scans retained for legacy checkpoints and explicit audit mode"
+}

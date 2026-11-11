@@ -1,0 +1,13 @@
+diff --git a/code/tools/joint_distribution.c b/code/tools/joint_distribution.c
+index e5260ef..f0f3cc5 100644
+--- a/code/tools/joint_distribution.c
++++ b/code/tools/joint_distribution.c
+@@ -83,7 +83,7 @@ struct ATTRIBUTE_KEY_RECORD * initializeCharAttributeKeyRecord(int maxAttributeC
+ 
+ 	record->attributeValue = (char **)malloc(record->maxAttributeCount * sizeof(char *));
+ 	MALLOC_CHECK(record->attributeValue);
+-	memset(record->attributeKeyCount, 0, record->maxAttributeCount * sizeof(char *));
++	memset(record->attributeKeyCount, 0, record->maxAttributeCount * sizeof(int));
+ 
+ 	record->firstKey = (ds_key_t *)malloc(record->maxAttributeCount * sizeof(ds_key_t));
+ 	MALLOC_CHECK(record->firstKey);

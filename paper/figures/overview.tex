@@ -1,0 +1,62 @@
+% Fig. 2: end-to-end data flow. Nodes are placed relative to each other with
+% fixed gaps, so that no two nodes can overlap when the text changes.
+\begin{tikzpicture}[node distance=5mm]
+  % step 1: candidate sources
+  \node[proc, minimum width=2.75cm] (s1) {Calcite rules};
+  \node[proc, minimum width=2.75cm, below=2.2mm of s1] (s2) {Replayed rewrites};
+  \node[proc, minimum width=2.75cm, below=2.2mm of s2] (s3) {LLM proposals};
+  \node[proc, minimum width=2.75cm, below=2.2mm of s3] (s4) {Planner hints};
+  \begin{scope}[on background layer]
+    \node[draw, line width=0.6pt, dashed, inner sep=4pt, fit=(s1)(s4)] (grp) {};
+  \end{scope}
+  \node[anchor=south, inner sep=2.5pt] at (grp.north) {\textbf{1}~Candidate sources};
+
+  % inputs
+  \node[store, minimum width=1.55cm, left=6mm of grp, yshift=6.5mm] (q) {Statement\\$q$};
+  \node[store, minimum width=1.55cm, minimum height=9mm, left=6mm of grp, yshift=-6.5mm] (schema) {Schema};
+
+  % main row
+  \node[store, minimum height=11mm, right=of grp] (pool) {Pool\\$P(q)$};
+  \node[proc, minimum height=11mm, right=of pool] (gate) {\textbf{2}~Gate\\$G$};
+  \node[store, minimum height=11mm, right=of gate] (ver) {Verified\\set $V(q)$};
+  \node[proc, minimum height=11mm, right=of ver] (prio) {\textbf{3}~Prioritize,\\first $M$};
+  \node[exec, minimum height=11mm, right=of prio] (probe) {\textbf{4}~Probe\\($\le 2$ runs)};
+  \node[exec, minimum height=11mm, right=of probe] (time) {\textbf{5}~Time\\($1{+}3$ runs)};
+
+  % side stores
+  \node[store, below=8mm of gate] (vdb) {Verification database,\\five miniature databases};
+  \node[store, minimum width=3.6cm] (db) at ($(probe.north)!0.5!(time.north) + (0,1.25)$) {Target database $D$};
+
+  % decision and outputs
+  \node[dec, below=9mm of time] (dec) {Faster\\than $q$?};
+  \node[store, left=12mm of dec, yshift=6.3mm] (out1) {Rewrite $r^{\ast}$ and\\its evidence label};
+  \node[store, minimum width=3.0cm, left=12mm of dec, yshift=-6.3mm] (out2) {Original $q$\\(fallback)};
+
+  % flows
+  \draw[flow] (q.east) -- (q.east -| grp.west);
+  \draw[flow] (schema.east) -- (schema.east -| grp.west);
+  \draw[flow] (grp.east) -- (pool.west);
+  \draw[flow] (pool.east) -- (gate.west);
+  \draw[flow] (gate.east) -- (ver.west);
+  \draw[flow] (ver.east) -- (prio.west);
+  \draw[flow] (prio.east) -- (probe.west);
+  \draw[flow] (probe.east) -- (time.west);
+  \draw[biflow] (gate.south) -- (vdb.north);
+  \draw[biflow] (probe.north) -- (probe.north |- db.south);
+  \draw[biflow] (time.north) -- (time.north |- db.south);
+  \draw[flow] (prio.north) |- node[pos=0.75, above, inner sep=2pt] {plan costs} (db.west);
+  \draw[flow] (time.south) -- (dec.north);
+  \draw[flow] (dec.west) -- ++(-0.55,0) |- node[pos=0.75, above, inner sep=2pt] {yes} (out1.east);
+  \draw[flow] (dec.west) -- ++(-0.55,0) |- node[pos=0.75, below, inner sep=2pt] {no} (out2.east);
+
+  % legend
+  \coordinate (leg) at ([yshift=2mm]q.west |- out2.south);
+  \node[store, minimum width=0.5cm, minimum height=0.32cm, inner sep=0pt, anchor=west] (l1) at (leg) {};
+  \node[anchor=west, inner sep=2pt] (t1) at (l1.east) {data};
+  \node[proc, minimum width=0.5cm, minimum height=0.32cm, inner sep=0pt, anchor=west] (l2) at ([xshift=4mm]t1.east) {};
+  \node[anchor=west, inner sep=2pt] (t2) at (l2.east) {no execution on $D$};
+  \node[exec, minimum width=0.5cm, minimum height=0.32cm, inner sep=0pt, anchor=west] (l3) at ([xshift=4mm]t2.east) {};
+  \node[anchor=west, inner sep=2pt] (t3) at (l3.east) {executes on $D$};
+  \node[dec, rounded corners=2.5pt, minimum width=0.5cm, minimum height=0.32cm, inner sep=0pt, anchor=west] (l4) at ([xshift=4mm]t3.east) {};
+  \node[anchor=west, inner sep=2pt] (t4) at (l4.east) {decision};
+\end{tikzpicture}

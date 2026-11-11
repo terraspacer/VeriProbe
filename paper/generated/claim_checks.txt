@@ -1,0 +1,17 @@
+claim check ok     [Abstract, I, VIII-G, XI] session, held-out: the layer is faster than QUITE replay
+claim check ok     [Abstract, I, VIII-G, XI] session, held-out: R-Bot replay is faster than the layer
+claim check ok     [VIII-G] session, held-out: the layer is faster than Original
+claim check ok     [VIII-B, VIII-G] session, held-out: more than one cut-off original is kept although a replay finishes
+claim check ok     [I, VIII-B] logs, held-out: the layer is robustly faster than QUITE replay
+claim check ok     [VIII-B] logs, held-out: the R-Bot interval contains the mean of the layer
+claim check ok     [VIII-B] logs, TPC-H held-out: R-Bot replay is robustly better than the layer
+claim check ok     [I, VIII-C] logs, Zipf: the layer is robustly faster than both replays
+claim check ok     [VIII-C] logs: the reduction on Zipf data is within 10 points of the reduction on uniform data
+claim check ok     [VIII-A] logs, Dev: the layer is robustly faster than QUITE replay
+claim check ok     [VIII-A] logs, Dev: only the lower end of the R-Bot interval is close to the layer
+claim check ok     [VIII-D] logs: a budget of one yields more than half of the final improvements
+claim check ok     [VIII-E] logs, Dev: planner cost only is robustly worse than the full policy
+claim check ok     [VIII-E] logs, held-out: the cost-only interval contains the means of Original and of the full policy
+claim check ok     [VIII-E] logs: class B carries Dev, class A carries the held-out statements
+claim check ok     [I, VIII-C next to Table IV] session, Zipf (covered pairs): the layer is faster than both replays
+claim check ok     [VIII-A next to Table IV] session, Dev (covered pairs): the layer is faster than QUITE replay

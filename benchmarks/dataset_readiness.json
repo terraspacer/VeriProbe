@@ -1,0 +1,1884 @@
+{
+  "format_version": 1,
+  "complete": true,
+  "pending": [],
+  "datasets": {
+    "tpch_dev": {
+      "database": "tpch_dev",
+      "dbname": "tpch_dev",
+      "benchmark": "tpch",
+      "scale": 0.01,
+      "profile": "development",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/gregrahn/tpch-kit",
+        "source_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "scale": 0.01,
+        "seed": "TPC-H built-in deterministic RNG streams",
+        "command": [
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dbgen",
+          "-f",
+          "-s",
+          "0.01",
+          "-b",
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dists.dss"
+        ],
+        "exact_author_snapshot": false,
+        "elapsed_s": 3.057
+      },
+      "schema_path": "vendor/LLM4Rewrite/tpch/create_tables.sql",
+      "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+      "tables": {
+        "customer": {
+          "rows": 1500,
+          "source_sha256": "22156f2770387f5adadbc72774f2282d353aedd5092bd8fc54871b3bf5e74cba",
+          "bytes": 239490
+        },
+        "lineitem": {
+          "rows": 60175,
+          "source_sha256": "517b566190fbeadc638602554d109a463631e19788936ccb97196ebd407b51f1",
+          "bytes": 7204075
+        },
+        "nation": {
+          "rows": 25,
+          "source_sha256": "7d47bc9397da331054fa92b8fb92e4c074004bad72dcbb893012093218dccf6c",
+          "bytes": 2199
+        },
+        "orders": {
+          "rows": 15000,
+          "source_sha256": "a444603dfba6c47e902e24b517608a5eb3b117127e99dff16a40f4eaa47b812c",
+          "bytes": 1644137
+        },
+        "part": {
+          "rows": 2000,
+          "source_sha256": "604232ee10e95dca875c196f759c07babf34293dfac8c99b9f1f0c2708f0561b",
+          "bytes": 235134
+        },
+        "partsupp": {
+          "rows": 8000,
+          "source_sha256": "906f58419af6ad5d62489a7e2105257654bb6d8458a7fd8fe19b76655aac50c7",
+          "bytes": 1153705
+        },
+        "region": {
+          "rows": 5,
+          "source_sha256": "5a7c2fe9718db00ff5e5bc82a9ebfa8abc492cc75260d3c0ffb411974f235ab0",
+          "bytes": 384
+        },
+        "supplier": {
+          "rows": 100,
+          "source_sha256": "b199bef3350840676cfe4be096091851bc47b6a57cd8a71b3f559d42b7d9dacd",
+          "bytes": 13695
+        }
+      },
+      "started": "2026-10-26T17:20:42.642571+00:00",
+      "total_rows": 86805,
+      "database_bytes": 22192643,
+      "elapsed_s": 0.731,
+      "completed": "2026-10-26T17:20:43.373874+00:00",
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "attested": "2026-10-26T21:27:59.956498+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:27:59.956485+00:00"
+      }
+    },
+    "dsb_dev": {
+      "database": "dsb_dev",
+      "dbname": "dsb_dev",
+      "benchmark": "dsb",
+      "scale": 1,
+      "profile": "development",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/microsoft/dsb",
+        "source_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "scale": 1,
+        "seed": 0,
+        "command": [
+          "dsdgen",
+          "-scale",
+          "1",
+          "-terminate",
+          "N",
+          "-force",
+          "Y",
+          "-dir",
+          "/workspace/VeriProbe/.runtime/data/development/dsb",
+          "-rngseed",
+          "0"
+        ],
+        "exact_author_snapshot": false,
+        "log": ".runtime/dsb-dev-generation.log"
+      },
+      "schema_path": "vendor/LLM4Rewrite/dsb/create_tables.sql",
+      "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+      "tables": {
+        "call_center": {
+          "rows": 6,
+          "source_sha256": "d581b05ef1dce4dd1396b73cc8a12a5047a4fae38268ccb8360220d5117043c1",
+          "bytes": 1831
+        },
+        "catalog_page": {
+          "rows": 11718,
+          "source_sha256": "13399a0819f5e513996bf9124a9d6b51e809d3841c6a9958c4be9d6f216c96a2",
+          "bytes": 1619984
+        },
+        "catalog_returns": {
+          "rows": 215997,
+          "source_sha256": "c0a21ce199d4710bde3cd3a2c8eaf0a5efcfc0a0b11e3f3ddd44fe3c27b99960",
+          "bytes": 31536028
+        },
+        "catalog_sales": {
+          "rows": 1439874,
+          "source_sha256": "3fa9667f82ced0fd71d81d8cfd7645098517dd81666eee33b44d080d6a3d17d2",
+          "bytes": 292018033
+        },
+        "customer": {
+          "rows": 100000,
+          "source_sha256": "113da7b4d4a2a06b7174df29cf90dc9313df8d3246b773c3b4c1821ab06683c0",
+          "bytes": 13061771
+        },
+        "customer_address": {
+          "rows": 50000,
+          "source_sha256": "3b52512632ca308564e9ef44f5f8220f3ba2661c28bc83336ecfddde3f9adc8e",
+          "bytes": 5506206
+        },
+        "customer_demographics": {
+          "rows": 1920800,
+          "source_sha256": "55c63a5e5a1fd0a319da1d5b19664b16f2df76c5cfe4dc862386b761016e181c",
+          "bytes": 78739296
+        },
+        "date_dim": {
+          "rows": 73049,
+          "source_sha256": "3daa146ffbb2dadc8477bdf20dafde503d26cf79b42249d9f5db5b808dfec333",
+          "bytes": 10244389
+        },
+        "dbgen_version": {
+          "rows": 1,
+          "source_sha256": "4fd6562588346641fad383444bb7681ecec62d9edc4c755459556a4de9a09945",
+          "bytes": 131
+        },
+        "household_demographics": {
+          "rows": 7200,
+          "source_sha256": "b7f57bb122fd8710287ada44f2bfb31716e8f61ea9c89061490d6c27bd9e8a9e",
+          "bytes": 144453
+        },
+        "income_band": {
+          "rows": 20,
+          "source_sha256": "6e188887e61a74e09f5a3fd9f12ae991b60c78c5ab3460ddac3028d71641c163",
+          "bytes": 308
+        },
+        "inventory": {
+          "rows": 11745000,
+          "source_sha256": "cb37d31a8329584ccbe1c331a27aecf2b7722b70e894e1228f54df8ad12c2a98",
+          "bytes": 225071147
+        },
+        "item": {
+          "rows": 18000,
+          "source_sha256": "2530f41324a13f5222ab772b69a42861066ef42be954ac1642f63a77b5f12e18",
+          "bytes": 5021691
+        },
+        "promotion": {
+          "rows": 300,
+          "source_sha256": "635de0af569a0a39402beb99c4afd958a2ba5cac1095de05643c6b155c42a59c",
+          "bytes": 37075
+        },
+        "reason": {
+          "rows": 35,
+          "source_sha256": "cc0d28616ddbfda4dc2e6c2cecf09cff936055da136401c7bbe5c8d751697cd5",
+          "bytes": 1304
+        },
+        "ship_mode": {
+          "rows": 20,
+          "source_sha256": "14deaeac296d8c1645b8c8b5abfdc480697ad6fcbaa2dd6a99c011e9512edc19",
+          "bytes": 1042
+        },
+        "store": {
+          "rows": 12,
+          "source_sha256": "4e2af305f59f4684ab186d3cb420b1b6bde46f67f4ab02f12d827b5edbfee671",
+          "bytes": 3349
+        },
+        "store_returns": {
+          "rows": 720704,
+          "source_sha256": "10e6800959fbc6fe45ea878fa17cef9e94b11587cf64b366c7d7b3a973f16618",
+          "bytes": 81350497
+        },
+        "store_sales": {
+          "rows": 2879434,
+          "source_sha256": "3dc00d928deffb95232505fad33489333e52f0ce02ad8c5cf233f657f9a92bd5",
+          "bytes": 387526264
+        },
+        "time_dim": {
+          "rows": 86400,
+          "source_sha256": "800bc4ae5531e5f3ef71e8d50ec8b7b7b8946082ef891309444ab669f75a6e75",
+          "bytes": 5021380
+        },
+        "warehouse": {
+          "rows": 5,
+          "source_sha256": "93ca0f807c32d330aa460c39670aa52015fe9fae6c70827cc5cd1e16f6d6cf88",
+          "bytes": 611
+        },
+        "web_page": {
+          "rows": 60,
+          "source_sha256": "b151011c484a640111dcf90d576555ae3aaf0e10b9017db8e4f7fc2fafc4d21b",
+          "bytes": 5726
+        },
+        "web_returns": {
+          "rows": 143619,
+          "source_sha256": "63187f9856693c3c7ae5eb12b1d8743e5a0d814d76e03f71c093f63ea6614b15",
+          "bytes": 19328832
+        },
+        "web_sales": {
+          "rows": 719620,
+          "source_sha256": "9de0b1abf1cd2bf5a32519be945491f9d2a2df36fec1d5d80fc3a8d2e2600a99",
+          "bytes": 145784065
+        },
+        "web_site": {
+          "rows": 30,
+          "source_sha256": "23ec9c6e587b18f7a5cb682725fc862b0f7d786e9a35c337e18da1ae8eb5a9e3",
+          "bytes": 8556
+        }
+      },
+      "started": "2026-10-26T17:20:46.010112+00:00",
+      "total_rows": 20131904,
+      "database_bytes": 2535498243,
+      "elapsed_s": 73.106,
+      "completed": "2026-10-26T17:21:59.115846+00:00",
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "attested": "2026-10-26T21:28:00.325677+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:00.325666+00:00"
+      }
+    },
+    "calcite_dev": {
+      "database": "calcite_dev",
+      "dbname": "calcite_dev",
+      "benchmark": "calcite",
+      "scale": 10000,
+      "distribution": "uniform",
+      "profile": "development",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/eidos06/SlabCity",
+        "source_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "source_path": "benchmarks/data/calcite/calcite_uniform/calcite_sales.py",
+        "source_sha256": "c2c12a0d18b6bb6a6bee45f396f9672be01ce61d12772776253000ba9162ed4d",
+        "size_parameter": 10000,
+        "distribution": "uniform",
+        "seed": 2333,
+        "dependencies": {
+          "Faker": "22.2.0",
+          "numpy": "1.26.3"
+        },
+        "exact_author_snapshot": false,
+        "adaptations": [
+          "explicit size parameter beyond upstream250K/1M/4M switches",
+          "row lists spooled to CSV without changing RNG calls",
+          "lazy range domains",
+          "streaming nullable20 selection"
+        ],
+        "tables": {
+          "emp": {
+            "rows": 10000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMP.csv",
+            "sha256": "10cc4ad9b0fc0bc5f083b48c8ff2fca3a4274743bc969d7abd2e9976a0a49536",
+            "bytes": 535263
+          },
+          "emp_b": {
+            "rows": 10000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER",
+              "BIRTHDATE"
+            ],
+            "file": "EMP_B.csv",
+            "sha256": "ec704bb41f97f4c2dbbc2fb2e8219dcdd30fc9ac54942c40d9645a5347af8864",
+            "bytes": 645394
+          },
+          "empnullables": {
+            "rows": 10000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES.csv",
+            "sha256": "1ed733ce3c4288289a604014053a2cc8f3d3ef85fda718fc6183c95eaaa91d78",
+            "bytes": 499298
+          },
+          "empnullables_20": {
+            "rows": 61,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES_20.csv",
+            "sha256": "ba1ce971312d19e17ad7655ff160de932f55d08878ef44e1f2b521f8241b6a3a",
+            "bytes": 3209
+          },
+          "dept": {
+            "rows": 100,
+            "columns": [
+              "DEPTNO",
+              "NAME"
+            ],
+            "file": "DEPT.csv",
+            "sha256": "296079ac9a70beed7252509ff4e8432b115566830bc4f105050082c323f63824",
+            "bytes": 1200
+          },
+          "bonus": {
+            "rows": 10000,
+            "columns": [
+              "ENAME",
+              "JOB",
+              "SAL",
+              "COMM"
+            ],
+            "file": "BONUS.csv",
+            "sha256": "0700d449ce47ab3d562cff29cde195e59e83ed0b8a45e394174834bbc124cbac",
+            "bytes": 247365
+          }
+        }
+      },
+      "schema_path": "vendor/LLM4Rewrite/calcite/create_tables.sql",
+      "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+      "tables": {
+        "bonus": {
+          "rows": 10000,
+          "source_sha256": "0700d449ce47ab3d562cff29cde195e59e83ed0b8a45e394174834bbc124cbac",
+          "bytes": 247365
+        },
+        "dept": {
+          "rows": 100,
+          "source_sha256": "296079ac9a70beed7252509ff4e8432b115566830bc4f105050082c323f63824",
+          "bytes": 1200
+        },
+        "emp": {
+          "rows": 10000,
+          "source_sha256": "10cc4ad9b0fc0bc5f083b48c8ff2fca3a4274743bc969d7abd2e9976a0a49536",
+          "bytes": 535263
+        },
+        "empnullables": {
+          "rows": 10000,
+          "source_sha256": "1ed733ce3c4288289a604014053a2cc8f3d3ef85fda718fc6183c95eaaa91d78",
+          "bytes": 499298
+        },
+        "empnullables_20": {
+          "rows": 61,
+          "source_sha256": "ba1ce971312d19e17ad7655ff160de932f55d08878ef44e1f2b521f8241b6a3a",
+          "bytes": 3209
+        },
+        "emp_b": {
+          "rows": 10000,
+          "source_sha256": "ec704bb41f97f4c2dbbc2fb2e8219dcdd30fc9ac54942c40d9645a5347af8864",
+          "bytes": 645394
+        }
+      },
+      "started": "2026-10-26T17:20:43.506761+00:00",
+      "total_rows": 40161,
+      "database_bytes": 12427779,
+      "elapsed_s": 0.281,
+      "completed": "2026-10-26T17:20:43.787580+00:00",
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "attested": "2026-10-26T21:28:00.656831+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:00.656820+00:00"
+      }
+    },
+    "tpch10": {
+      "database": "tpch10",
+      "dbname": "tpch10",
+      "benchmark": "tpch",
+      "scale": 10,
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/gregrahn/tpch-kit",
+        "source_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "scale": 10,
+        "seed": "TPC-H built-in deterministic RNG streams",
+        "command": [
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dbgen",
+          "-f",
+          "-s",
+          "10",
+          "-b",
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dists.dss"
+        ],
+        "exact_author_snapshot": false,
+        "elapsed_s": 195.561
+      },
+      "schema_path": "vendor/LLM4Rewrite/tpch/create_tables.sql",
+      "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+      "tables": {
+        "customer": {
+          "rows": 1500000,
+          "source_sha256": "06c23df7cd078f95491ce1c6f075cb4d23af8e14d3ad089a9adffe5b4800cad9",
+          "bytes": 243347642
+        },
+        "lineitem": {
+          "rows": 59986052,
+          "source_sha256": "b7003c61280181419419a8028cecda7b85fc8accbc3763599fa32200c2f9666c",
+          "bytes": 7715741636
+        },
+        "nation": {
+          "rows": 25,
+          "source_sha256": "7d47bc9397da331054fa92b8fb92e4c074004bad72dcbb893012093218dccf6c",
+          "bytes": 2199
+        },
+        "orders": {
+          "rows": 15000000,
+          "source_rows": 15000000,
+          "server_copy_rows": 15000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "source_sha256": "6493d81ed361d1e31055a96a44659902948090e33f5a163e62a3b071ec567c04",
+          "bytes": 1734195031
+        },
+        "part": {
+          "rows": 2000000,
+          "source_rows": 2000000,
+          "server_copy_rows": 2000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "source_sha256": "43a6d487ec938e7b11b2fe57cc1c0db6a70f4ba0c5c64fcad0c790ddcb49be27",
+          "bytes": 241336157
+        },
+        "partsupp": {
+          "rows": 8000000,
+          "source_rows": 8000000,
+          "server_copy_rows": 8000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "source_sha256": "f2c9a000de9fe326300d5709ae08c714c724c3626d6077505990dd3037372e0e",
+          "bytes": 1196850769
+        },
+        "region": {
+          "rows": 5,
+          "source_rows": 5,
+          "server_copy_rows": 5,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "source_sha256": "5a7c2fe9718db00ff5e5bc82a9ebfa8abc492cc75260d3c0ffb411974f235ab0",
+          "bytes": 384
+        },
+        "supplier": {
+          "rows": 100000,
+          "source_rows": 100000,
+          "server_copy_rows": 100000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "source_sha256": "689961f81ddef971c34256948446d2c8e47b7d5f1ffa3350cf3220ca5bd46998",
+          "bytes": 14076368
+        }
+      },
+      "started": "2026-10-26T17:25:07.631840+00:00",
+      "resume_events": [
+        {
+          "time": "2026-10-26T17:46:00.863978+00:00",
+          "generation_json_sha256": "598f6e40a999f00450cd916add7d8521ea5adf1ac701bd8f0bdbc10228fb79a4",
+          "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+          "completed_tables": [
+            "customer",
+            "lineitem",
+            "nation"
+          ]
+        }
+      ],
+      "catalog_schema_sha256": "36b979dc352ec9d2f6aff768aec1f09f6887ed4b042158cb0b64e54f8b17f581",
+      "total_rows": 86586082,
+      "database_bytes": 13437673987,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 252.466,
+      "completed": "2026-10-26T17:50:13.330404+00:00",
+      "attested": "2026-10-26T21:28:00.938243+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:00.938230+00:00"
+      }
+    },
+    "tpch50": {
+      "database": "tpch50",
+      "dbname": "tpch50",
+      "benchmark": "tpch",
+      "scale": 50,
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/gregrahn/tpch-kit",
+        "source_commit": "852ad0a5ee31ebefeed884cea4188781dd9613a3",
+        "scale": 50,
+        "seed": "TPC-H built-in deterministic RNG streams",
+        "command": [
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dbgen",
+          "-f",
+          "-s",
+          "50",
+          "-b",
+          "/workspace/VeriProbe/.local/generators/tpch-kit/dbgen/dists.dss"
+        ],
+        "exact_author_snapshot": false,
+        "executable_sha256": "19b2f050387103e98425eb2c67fda3ca62e1af5ff5438b3384f1a37b7a2eb7b0",
+        "elapsed_s": 1197.976
+      },
+      "schema_path": "vendor/LLM4Rewrite/tpch/create_tables.sql",
+      "schema_sha256": "4fc33b97f09b573d748179f6a0a4d049f8d5057c7919ce2c163bb80e1af23eef",
+      "tables": {
+        "customer": {
+          "rows": 7500000,
+          "source_rows": 7500000,
+          "server_copy_rows": 7500000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "cc06a58149647ad27b664ff5e76b6b8aea1ea631225b94a2a603a3acf80e13cd",
+          "bytes": 1221138997
+        },
+        "lineitem": {
+          "rows": 300005811,
+          "source_rows": 300005811,
+          "server_copy_rows": 300005811,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "ca073b2485b705772e49a297ff6b6ffe80f4f95cab48683d89c47e94619971f3",
+          "bytes": 39232656196
+        },
+        "nation": {
+          "rows": 25,
+          "source_rows": 25,
+          "server_copy_rows": 25,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "7d47bc9397da331054fa92b8fb92e4c074004bad72dcbb893012093218dccf6c",
+          "bytes": 2199
+        },
+        "orders": {
+          "rows": 75000000,
+          "source_rows": 75000000,
+          "server_copy_rows": 75000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "b94d3a372e6c6e7c6a6d7be163829e7eeb0454dca015d34d208aabd08525fc40",
+          "bytes": 8777127362
+        },
+        "part": {
+          "rows": 10000000,
+          "source_rows": 10000000,
+          "server_copy_rows": 10000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "081fa52e75d31655406f9337a643439bb1c11943a6c68779bd5ea8febe403e3c",
+          "bytes": 1211051905
+        },
+        "partsupp": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "63b9e2eaf257636ee0ddf2f6e397b4d3b581c257c31e651f56d389ea421de36e",
+          "bytes": 6037819784
+        },
+        "region": {
+          "rows": 5,
+          "source_rows": 5,
+          "server_copy_rows": 5,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "5a7c2fe9718db00ff5e5bc82a9ebfa8abc492cc75260d3c0ffb411974f235ab0",
+          "bytes": 384
+        },
+        "supplier": {
+          "rows": 500000,
+          "source_rows": 500000,
+          "server_copy_rows": 500000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "cee9c4183a207eaa7ffbd8dec38208454121871869b555cb624f7a7b9510cc6b",
+          "bytes": 70871820
+        }
+      },
+      "started": "2026-10-26T19:09:55.633139+00:00",
+      "catalog_schema_sha256": "4c27e67df4fd0640f2e213e80a2a599b40dd9ae18839626d702816ece6bce0cf",
+      "total_rows": 433005841,
+      "database_bytes": 67164783107,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 2557.002,
+      "completed": "2026-10-26T19:52:32.641345+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:01.234720+00:00"
+      },
+      "attested": "2026-10-26T21:28:01.234729+00:00"
+    },
+    "dsb10": {
+      "database": "dsb10",
+      "dbname": "dsb10",
+      "benchmark": "dsb",
+      "scale": 10,
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/microsoft/dsb",
+        "source_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "scale": 10,
+        "seed": 0,
+        "command": [
+          "/workspace/VeriProbe/.local/generators/dsb/code/tools/dsdgen",
+          "-scale",
+          "10",
+          "-terminate",
+          "N",
+          "-force",
+          "Y",
+          "-dir",
+          "/workspace/VeriProbe/.runtime/data/published/dsb10",
+          "-rngseed",
+          "0"
+        ],
+        "exact_author_snapshot": false,
+        "executable_sha256": "f4695879ad7cbec03cf633ef2f92d9358d2e9668fcad7c1530fa3e13f2a8c4b7",
+        "elapsed_s": 943.384
+      },
+      "schema_path": "vendor/LLM4Rewrite/dsb/create_tables.sql",
+      "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+      "tables": {
+        "call_center": {
+          "rows": 24,
+          "bytes": 7492,
+          "source_rows": 24,
+          "source_sha256": "ebd87db71e1104bf09bc708418d66a32ac7f0c27cd412e882f7d941df84aa22d",
+          "server_copy_rows": 24,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "catalog_page": {
+          "rows": 12000,
+          "bytes": 1659308,
+          "source_rows": 12000,
+          "source_sha256": "5344d510dd186f19ca7b5ece52f5aa13d1489690ead0518536e4cc1975b2aa6d",
+          "server_copy_rows": 12000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "catalog_returns": {
+          "rows": 2158974,
+          "bytes": 327737467,
+          "source_rows": 2158974,
+          "source_sha256": "0df8a124e9a638c0795a7872db5928f4984c3189212e8ea7f0d178eb24d37eca",
+          "server_copy_rows": 2158974,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "catalog_sales": {
+          "rows": 14396079,
+          "bytes": 3012084326,
+          "source_rows": 14396079,
+          "source_sha256": "e930814fb3d880219ebf3695f22eb4bbc252e7a2e4c9bdbe46d2eb4d79842201",
+          "server_copy_rows": 14396079,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "customer": {
+          "rows": 500000,
+          "bytes": 66127159,
+          "source_rows": 500000,
+          "source_sha256": "b80d1128dbd90f4113b4f73e0c45275d1bc4f3b60e4c5ac3ac485d9d105aa8fe",
+          "server_copy_rows": 500000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "customer_address": {
+          "rows": 250000,
+          "bytes": 27706976,
+          "source_rows": 250000,
+          "source_sha256": "482b089f8a6aa6b23f464129e44394fc9d61f5be6c5927a17a172a0628c41644",
+          "server_copy_rows": 250000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "customer_demographics": {
+          "rows": 1920800,
+          "bytes": 78739296,
+          "source_rows": 1920800,
+          "source_sha256": "55c63a5e5a1fd0a319da1d5b19664b16f2df76c5cfe4dc862386b761016e181c",
+          "server_copy_rows": 1920800,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "date_dim": {
+          "rows": 73049,
+          "bytes": 10244389,
+          "source_rows": 73049,
+          "source_sha256": "3daa146ffbb2dadc8477bdf20dafde503d26cf79b42249d9f5db5b808dfec333",
+          "server_copy_rows": 73049,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "dbgen_version": {
+          "rows": 1,
+          "bytes": 132,
+          "source_rows": 1,
+          "source_sha256": "b4a050faea8034f4d5c17113216cb363a65302c4b20bd79346faa3b8c9a062a3",
+          "server_copy_rows": 1,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "household_demographics": {
+          "rows": 7200,
+          "bytes": 144453,
+          "source_rows": 7200,
+          "source_sha256": "b7f57bb122fd8710287ada44f2bfb31716e8f61ea9c89061490d6c27bd9e8a9e",
+          "server_copy_rows": 7200,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "income_band": {
+          "rows": 20,
+          "bytes": 308,
+          "source_rows": 20,
+          "source_sha256": "6e188887e61a74e09f5a3fd9f12ae991b60c78c5ab3460ddac3028d71641c163",
+          "server_copy_rows": 20,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction"
+        },
+        "inventory": {
+          "rows": 133110000,
+          "source_rows": 133110000,
+          "server_copy_rows": 133110000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "a462036e54d00c5367d3c44dca0b70e0edd1c9054145d40ed3ccb15f9a1881f6",
+          "bytes": 2634368412,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "item": {
+          "rows": 102000,
+          "source_rows": 102000,
+          "server_copy_rows": 102000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "a018320b1dbcfa16c00d6dd83e2367311db6c0adf4d9cf9e00a60e97e3e7232e",
+          "bytes": 28674766
+        },
+        "promotion": {
+          "rows": 500,
+          "source_rows": 500,
+          "server_copy_rows": 500,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "c94194095207c247b0aa041996703b61451310a6481ed9558fd977773d40df6d",
+          "bytes": 61693
+        },
+        "reason": {
+          "rows": 45,
+          "source_rows": 45,
+          "server_copy_rows": 45,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "162864947ac6a7c204a70bfa24469ba6a67fc3ddbdd660d4451a658b6779b0ec",
+          "bytes": 1604
+        },
+        "ship_mode": {
+          "rows": 20,
+          "source_rows": 20,
+          "server_copy_rows": 20,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "14deaeac296d8c1645b8c8b5abfdc480697ad6fcbaa2dd6a99c011e9512edc19",
+          "bytes": 1042
+        },
+        "store": {
+          "rows": 102,
+          "source_rows": 102,
+          "server_copy_rows": 102,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "897dbb52f13f9d1f34969bb0d848be21451ec10a1aa2fcea28b5baaa9c6b1bd3",
+          "bytes": 27538
+        },
+        "store_returns": {
+          "rows": 7202325,
+          "source_rows": 7202325,
+          "server_copy_rows": 7202325,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "d1a89e535e2651e6ea8792fad0df7d9b351438032ea97758e580d1256259b72d",
+          "bytes": 834696944,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "store_sales": {
+          "rows": 28802256,
+          "source_rows": 28802256,
+          "server_copy_rows": 28802256,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "ffebb361b1a5ef920cc4be5cbe91024dbbddf3faf298a7856e66d1d3b4d8e317",
+          "bytes": 3964874377,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "time_dim": {
+          "rows": 86400,
+          "source_rows": 86400,
+          "server_copy_rows": 86400,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "800bc4ae5531e5f3ef71e8d50ec8b7b7b8946082ef891309444ab669f75a6e75",
+          "bytes": 5021380
+        },
+        "warehouse": {
+          "rows": 10,
+          "source_rows": 10,
+          "server_copy_rows": 10,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "a9baa0a8fcd146920a6dfeb95dea1b44e2330ce351f9b70e977016da374b143d",
+          "bytes": 1234
+        },
+        "web_page": {
+          "rows": 200,
+          "source_rows": 200,
+          "server_copy_rows": 200,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "5aa212b4cd74b617729b0bee14b039e5a66fc675064806b2969d288bef2e0ff2",
+          "bytes": 19219
+        },
+        "web_returns": {
+          "rows": 1440360,
+          "source_rows": 1440360,
+          "server_copy_rows": 1440360,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "9da2ed600b6d4595aff7eb564f53a87dfdde0e2b17ce8bda574d394cc14e64ae",
+          "bytes": 201275263,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "web_sales": {
+          "rows": 7199166,
+          "source_rows": 7199166,
+          "server_copy_rows": 7199166,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "8cc98f415f14338af4759e0651aaff433165bdd21456127b5f05fed45be7e8ac",
+          "bytes": 1498098976,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "web_site": {
+          "rows": 42,
+          "source_rows": 42,
+          "server_copy_rows": 42,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "9e6ad81c4a05703eeb0a0377afcf9e0eec34ba727fc8ccd415f5fcd1cab6f928",
+          "bytes": 12151
+        }
+      },
+      "started": "2026-10-26T18:00:25.468017+00:00",
+      "catalog_schema_sha256": "0dc8edb509712743012e55b04b28bf1df551101af8808c7f9c6abc9046e4f4cc",
+      "resume_events": [
+        {
+          "time": "2026-10-26T18:22:21.353577+00:00",
+          "generation_json_sha256": "14a0ef4512589b20125fe1bc7edbf1a64d981c61fc6d2b86a0e7d1725c99ca82",
+          "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+          "completed_tables": [
+            "call_center",
+            "catalog_page",
+            "catalog_returns",
+            "catalog_sales",
+            "customer",
+            "customer_address",
+            "customer_demographics",
+            "date_dim",
+            "dbgen_version",
+            "household_demographics",
+            "income_band"
+          ]
+        },
+        {
+          "time": "2026-10-26T18:30:56.605560+00:00",
+          "generation_json_sha256": "14a0ef4512589b20125fe1bc7edbf1a64d981c61fc6d2b86a0e7d1725c99ca82",
+          "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+          "completed_tables": [
+            "call_center",
+            "catalog_page",
+            "catalog_returns",
+            "catalog_sales",
+            "customer",
+            "customer_address",
+            "customer_demographics",
+            "date_dim",
+            "dbgen_version",
+            "household_demographics",
+            "income_band"
+          ]
+        },
+        {
+          "time": "2026-10-26T18:39:30.665434+00:00",
+          "generation_json_sha256": "14a0ef4512589b20125fe1bc7edbf1a64d981c61fc6d2b86a0e7d1725c99ca82",
+          "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+          "completed_tables": [
+            "call_center",
+            "catalog_page",
+            "catalog_returns",
+            "catalog_sales",
+            "customer",
+            "customer_address",
+            "customer_demographics",
+            "date_dim",
+            "dbgen_version",
+            "household_demographics",
+            "income_band"
+          ]
+        }
+      ],
+      "total_rows": 197261573,
+      "database_bytes": 22286295555,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 1808.047,
+      "completed": "2026-10-26T19:09:38.742873+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:01.613077+00:00"
+      },
+      "attested": "2026-10-26T21:28:01.613089+00:00"
+    },
+    "dsb50": {
+      "database": "dsb50",
+      "dbname": "dsb50",
+      "benchmark": "dsb",
+      "scale": 50,
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/microsoft/dsb",
+        "source_commit": "ec9a156ceee923db1114cbe388f6183b53d49787",
+        "scale": 50,
+        "seed": 0,
+        "command": [
+          "/workspace/VeriProbe/.local/generators/dsb/code/tools/dsdgen",
+          "-scale",
+          "50",
+          "-terminate",
+          "N",
+          "-force",
+          "Y",
+          "-dir",
+          "/workspace/VeriProbe/.runtime/data/published/dsb50",
+          "-rngseed",
+          "0"
+        ],
+        "exact_author_snapshot": false,
+        "executable_sha256": "f4695879ad7cbec03cf633ef2f92d9358d2e9668fcad7c1530fa3e13f2a8c4b7",
+        "elapsed_s": 2775.17
+      },
+      "schema_path": "vendor/LLM4Rewrite/dsb/create_tables.sql",
+      "schema_sha256": "805a1b08edf45fee0326efca6056ca881d92a00969e102fe731cf0781d24c0ea",
+      "tables": {
+        "call_center": {
+          "rows": 8,
+          "source_rows": 8,
+          "server_copy_rows": 8,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "673c912b90fe44062dd6af96ac89dd4e6734e7c9da1fb2dd86ff567f9328f100",
+          "bytes": 2483
+        },
+        "catalog_page": {
+          "rows": 11718,
+          "source_rows": 11718,
+          "server_copy_rows": 11718,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "13399a0819f5e513996bf9124a9d6b51e809d3841c6a9958c4be9d6f216c96a2",
+          "bytes": 1619984
+        },
+        "catalog_returns": {
+          "rows": 10795355,
+          "source_rows": 10795355,
+          "server_copy_rows": 10795355,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "8bb790a7e7941a6f927f53e8b94e6a61916952e6e499a57c331c3eaf8e36436a",
+          "bytes": 1642868822,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "catalog_sales": {
+          "rows": 71986075,
+          "source_rows": 71986075,
+          "server_copy_rows": 71986075,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "46281111318d319c5e452ea45d5b715d32f49506e2104339fc9900552ecce42e",
+          "bytes": 15082726694,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "customer": {
+          "rows": 766000,
+          "source_rows": 766000,
+          "server_copy_rows": 766000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "ebeb4769b966f8c4c4a04a72d1fb147b7fcfbad75488145c1fea8d36a56d96cf",
+          "bytes": 101515022,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "customer_address": {
+          "rows": 383000,
+          "source_rows": 383000,
+          "server_copy_rows": 383000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "23f0956890ee3bfad2e6f02197f3835ea342846fd4fda60ddaa7abf9337a3081",
+          "bytes": 42507370
+        },
+        "customer_demographics": {
+          "rows": 1920800,
+          "source_rows": 1920800,
+          "server_copy_rows": 1920800,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "55c63a5e5a1fd0a319da1d5b19664b16f2df76c5cfe4dc862386b761016e181c",
+          "bytes": 78739296
+        },
+        "date_dim": {
+          "rows": 73049,
+          "source_rows": 73049,
+          "server_copy_rows": 73049,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "3daa146ffbb2dadc8477bdf20dafde503d26cf79b42249d9f5db5b808dfec333",
+          "bytes": 10244389
+        },
+        "dbgen_version": {
+          "rows": 1,
+          "source_rows": 1,
+          "server_copy_rows": 1,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "5592b875fe545c9e5d1494b263d7037cef34b1df3c63fb8e0ebf6234424aefde",
+          "bytes": 132
+        },
+        "household_demographics": {
+          "rows": 7200,
+          "source_rows": 7200,
+          "server_copy_rows": 7200,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "b7f57bb122fd8710287ada44f2bfb31716e8f61ea9c89061490d6c27bd9e8a9e",
+          "bytes": 144453
+        },
+        "income_band": {
+          "rows": 20,
+          "source_rows": 20,
+          "server_copy_rows": 20,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "6e188887e61a74e09f5a3fd9f12ae991b60c78c5ab3460ddac3028d71641c163",
+          "bytes": 308
+        },
+        "inventory": {
+          "rows": 56638827,
+          "source_rows": 56638827,
+          "server_copy_rows": 56638827,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "dba42e87d0326769b37823f40620982a55affbb3e4a9a068f4b41425409001da",
+          "bytes": 1110180619,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "item": {
+          "rows": 62000,
+          "source_rows": 62000,
+          "server_copy_rows": 62000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "3f0134467912df8b9302fc43d8b2dde625d7340b50ce0845d366af2d9d233cfa",
+          "bytes": 17386640
+        },
+        "promotion": {
+          "rows": 522,
+          "source_rows": 522,
+          "server_copy_rows": 522,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "12bb6feede94ed77f18e9feb7fcf795745a1c9f6b11aac315099b4548088cf2b",
+          "bytes": 64312
+        },
+        "reason": {
+          "rows": 39,
+          "source_rows": 39,
+          "server_copy_rows": 39,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "77b45309c6929f7bb593897521ab1063639ae9a9903c3dbc910da4856a8d4b16",
+          "bytes": 1424
+        },
+        "ship_mode": {
+          "rows": 20,
+          "source_rows": 20,
+          "server_copy_rows": 20,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "14deaeac296d8c1645b8c8b5abfdc480697ad6fcbaa2dd6a99c011e9512edc19",
+          "bytes": 1042
+        },
+        "store": {
+          "rows": 144,
+          "source_rows": 144,
+          "server_copy_rows": 144,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "1804dd475b486200006482507780a4cf3aac5eeb61e7a45a022af83f1fb07ae3",
+          "bytes": 38323
+        },
+        "store_returns": {
+          "rows": 36002583,
+          "source_rows": 36002583,
+          "server_copy_rows": 36002583,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "73f9e2e3ce0e38b0ca9d40c955a94849f1c432cefd78c09ed47c85f51c2e6f63",
+          "bytes": 4234631825,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "store_sales": {
+          "rows": 144012046,
+          "source_rows": 144012046,
+          "server_copy_rows": 144012046,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "c4d926c15878fd3fc9414af1fde00821b0f3b523a3fbf67ab4b4955a17a5165b",
+          "bytes": 20105978193,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "time_dim": {
+          "rows": 86400,
+          "source_rows": 86400,
+          "server_copy_rows": 86400,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "800bc4ae5531e5f3ef71e8d50ec8b7b7b8946082ef891309444ab669f75a6e75",
+          "bytes": 5021380
+        },
+        "warehouse": {
+          "rows": 7,
+          "source_rows": 7,
+          "server_copy_rows": 7,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "18fc42520d35548cd701adcb6c3fc27c5caa06a9d0b5cc0d342048d8634c1494",
+          "bytes": 884
+        },
+        "web_page": {
+          "rows": 876,
+          "source_rows": 876,
+          "server_copy_rows": 876,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "0b20e03b354e9aeab4ab1165cbddd9763f78bd839837291a15b1efc517714685",
+          "bytes": 84395
+        },
+        "web_returns": {
+          "rows": 7201594,
+          "source_rows": 7201594,
+          "server_copy_rows": 7201594,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "06c973e157fcdfc0bac81551d63ff1a0dad02f8b7888adea7eee90535d4f16d7",
+          "bytes": 1017632415,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "web_sales": {
+          "rows": 35999114,
+          "source_rows": 35999114,
+          "server_copy_rows": 35999114,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "f33bc76791d7bc3e12202580f7578bb8d60a0f412776a030c49a78be18d66350",
+          "bytes": 7553142457,
+          "primary_key_load": "Original primary key rebuilt after COPY within the same transaction"
+        },
+        "web_site": {
+          "rows": 22,
+          "source_rows": 22,
+          "server_copy_rows": 22,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "15e2a5b80cd3bc1543e2fd861abde548a432e885b6a8b8ee4332f764614d9e52",
+          "bytes": 6288
+        }
+      },
+      "started": "2026-10-26T19:52:37.586522+00:00",
+      "catalog_schema_sha256": "0dc8edb509712743012e55b04b28bf1df551101af8808c7f9c6abc9046e4f4cc",
+      "total_rows": 365947420,
+      "database_bytes": 63165178371,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 3880.257,
+      "completed": "2026-10-26T20:57:17.843884+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:01.935361+00:00"
+      },
+      "attested": "2026-10-26T21:28:01.935380+00:00"
+    },
+    "calcite10": {
+      "database": "calcite10",
+      "dbname": "calcite10",
+      "benchmark": "calcite",
+      "scale": 40000000,
+      "distribution": "uniform",
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/eidos06/SlabCity",
+        "source_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "source_path": "benchmarks/data/calcite/calcite_uniform/calcite_sales.py",
+        "source_sha256": "c2c12a0d18b6bb6a6bee45f396f9672be01ce61d12772776253000ba9162ed4d",
+        "size_parameter": 40000000,
+        "distribution": "uniform",
+        "seed": 2333,
+        "dependencies": {
+          "Faker": "22.2.0",
+          "numpy": "1.26.3"
+        },
+        "exact_author_snapshot": false,
+        "zipf_overflow_retry_seeds": [],
+        "adaptations": [
+          "explicit size parameter beyond upstream250K/1M/4M switches",
+          "row lists spooled to CSV without changing RNG calls",
+          "lazy range domains",
+          "streaming nullable20 selection",
+          "system-time Zipf overflow retry seeds replaced with2334,2335,..."
+        ],
+        "tables": {
+          "emp": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMP.csv",
+            "sha256": "a52427f3a148acd090aa2bfe2aff417c282e8626ad233ba390ff70c244b27822",
+            "bytes": 2905302565
+          },
+          "emp_b": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER",
+              "BIRTHDATE"
+            ],
+            "file": "EMP_B.csv",
+            "sha256": "9263a4bfae37bd310852dc0d080374a016dd10ab7f4899ab26e1932b32ae2df5",
+            "bytes": 3345287488
+          },
+          "empnullables": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES.csv",
+            "sha256": "9944caf0618d5a84c863a36a5b7614ca0ff5eca9c350102a15111a27eb742ef0",
+            "bytes": 2713459956
+          },
+          "empnullables_20": {
+            "rows": 59,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES_20.csv",
+            "sha256": "39c8d938fc16f1c0e945802fe67f5a425835e417426d252d21ba9ce21aeaf882",
+            "bytes": 3943
+          },
+          "dept": {
+            "rows": 400000,
+            "columns": [
+              "DEPTNO",
+              "NAME"
+            ],
+            "file": "DEPT.csv",
+            "sha256": "dc4efede6a3b4dbde0e2546faf414a315531bff4a1d489e49fce0050bd60e611",
+            "bytes": 7777977
+          },
+          "bonus": {
+            "rows": 40000000,
+            "columns": [
+              "ENAME",
+              "JOB",
+              "SAL",
+              "COMM"
+            ],
+            "file": "BONUS.csv",
+            "sha256": "973cc925975d9dae607d54a3ef52bd49ac4e866072a4bcfb0e6579d11de95113",
+            "bytes": 1309472409
+          }
+        }
+      },
+      "schema_path": "vendor/LLM4Rewrite/calcite/create_tables.sql",
+      "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+      "tables": {
+        "bonus": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "973cc925975d9dae607d54a3ef52bd49ac4e866072a4bcfb0e6579d11de95113",
+          "bytes": 1309472409
+        },
+        "dept": {
+          "rows": 400000,
+          "source_rows": 400000,
+          "server_copy_rows": 400000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "dc4efede6a3b4dbde0e2546faf414a315531bff4a1d489e49fce0050bd60e611",
+          "bytes": 7777977
+        },
+        "emp": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "a52427f3a148acd090aa2bfe2aff417c282e8626ad233ba390ff70c244b27822",
+          "bytes": 2905302565
+        },
+        "empnullables": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "9944caf0618d5a84c863a36a5b7614ca0ff5eca9c350102a15111a27eb742ef0",
+          "bytes": 2713459956
+        },
+        "empnullables_20": {
+          "rows": 59,
+          "source_rows": 59,
+          "server_copy_rows": 59,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "39c8d938fc16f1c0e945802fe67f5a425835e417426d252d21ba9ce21aeaf882",
+          "bytes": 3943
+        },
+        "emp_b": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "9263a4bfae37bd310852dc0d080374a016dd10ab7f4899ab26e1932b32ae2df5",
+          "bytes": 3345287488
+        }
+      },
+      "started": "2026-10-26T20:57:47.777039+00:00",
+      "catalog_schema_sha256": "d1e15d2693fcd4b59e3c79d8c835a51c3a2d1da481677d8f9aebad28c350e00f",
+      "total_rows": 160400059,
+      "database_bytes": 15701238275,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 953.331,
+      "completed": "2026-10-26T21:13:41.107974+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:02.254272+00:00"
+      },
+      "attested": "2026-10-26T21:28:02.254283+00:00"
+    },
+    "calcite10zipf": {
+      "database": "calcite10zipf",
+      "dbname": "calcite10zipf",
+      "benchmark": "calcite",
+      "scale": 40000000,
+      "distribution": "zipf",
+      "profile": "published",
+      "ready": true,
+      "exact_author_snapshot": false,
+      "generation": {
+        "format_version": 1,
+        "source_url": "https://github.com/eidos06/SlabCity",
+        "source_commit": "d57a516d7249869c0c61e44f88795e1ce952e31d",
+        "source_path": "benchmarks/data/calcite/calcite_zipf/calcite_sales.py",
+        "source_sha256": "1d4a2480cf51f177ad7301da9375a39b01b9034d32bcec637e613600ed385bf3",
+        "size_parameter": 40000000,
+        "distribution": "zipf",
+        "seed": 2333,
+        "dependencies": {
+          "Faker": "22.2.0",
+          "numpy": "1.26.3"
+        },
+        "exact_author_snapshot": false,
+        "zipf_overflow_retry_seeds": [
+          2334,
+          2335,
+          2336
+        ],
+        "adaptations": [
+          "explicit size parameter beyond upstream250K/1M/4M switches",
+          "row lists spooled to CSV without changing RNG calls",
+          "lazy range domains",
+          "streaming nullable20 selection",
+          "system-time Zipf overflow retry seeds replaced with2334,2335,..."
+        ],
+        "tables": {
+          "emp": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMP.csv",
+            "sha256": "4bcde4acfab7863cd18a5ba319c29c539d2056273c8654844e0070acce834b85",
+            "bytes": 2936265742
+          },
+          "emp_b": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER",
+              "BIRTHDATE"
+            ],
+            "file": "EMP_B.csv",
+            "sha256": "3bf19e84bb3530aa9f286f7c226da6afb3d385fff58608ffbd8ce126d7f50768",
+            "bytes": 3376267817
+          },
+          "empnullables": {
+            "rows": 40000000,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES.csv",
+            "sha256": "69c055babea748e6d7d10be7058e774531a45cd49a2c78c2c2211920d6973bf8",
+            "bytes": 2741974382
+          },
+          "empnullables_20": {
+            "rows": 9,
+            "columns": [
+              "EMPNO",
+              "DEPTNO",
+              "ENAME",
+              "JOB",
+              "MGR",
+              "HIREDATE",
+              "SAL",
+              "COMM",
+              "SLACKER"
+            ],
+            "file": "EMPNULLABLES_20.csv",
+            "sha256": "aa847ee30deb1be2beae2d68999a0cd7783d6af79eee6b3bfdca1060658b034b",
+            "bytes": 709
+          },
+          "dept": {
+            "rows": 400000,
+            "columns": [
+              "DEPTNO",
+              "NAME"
+            ],
+            "file": "DEPT.csv",
+            "sha256": "17af896ba18e220353c9cca9a2b005c524990989e2513f9f97645323af2a2b55",
+            "bytes": 7777886
+          },
+          "bonus": {
+            "rows": 40000000,
+            "columns": [
+              "ENAME",
+              "JOB",
+              "SAL",
+              "COMM"
+            ],
+            "file": "BONUS.csv",
+            "sha256": "a92cae22ce1ea2f12dd0ce26480a695b02a7470c413b3eaa80d9eff779563bd0",
+            "bytes": 1327169218
+          }
+        }
+      },
+      "schema_path": "vendor/LLM4Rewrite/calcite/create_tables.sql",
+      "schema_sha256": "429ae34be8e654b0d06ea1e4f82eccb03edc0ef4c91af3ce38a0f0901b198cb2",
+      "tables": {
+        "bonus": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "a92cae22ce1ea2f12dd0ce26480a695b02a7470c413b3eaa80d9eff779563bd0",
+          "bytes": 1327169218
+        },
+        "dept": {
+          "rows": 400000,
+          "source_rows": 400000,
+          "server_copy_rows": 400000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "17af896ba18e220353c9cca9a2b005c524990989e2513f9f97645323af2a2b55",
+          "bytes": 7777886
+        },
+        "emp": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "4bcde4acfab7863cd18a5ba319c29c539d2056273c8654844e0070acce834b85",
+          "bytes": 2936265742
+        },
+        "empnullables": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "69c055babea748e6d7d10be7058e774531a45cd49a2c78c2c2211920d6973bf8",
+          "bytes": 2741974382
+        },
+        "empnullables_20": {
+          "rows": 9,
+          "source_rows": 9,
+          "server_copy_rows": 9,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "aa847ee30deb1be2beae2d68999a0cd7783d6af79eee6b3bfdca1060658b034b",
+          "bytes": 709
+        },
+        "emp_b": {
+          "rows": 40000000,
+          "source_rows": 40000000,
+          "server_copy_rows": 40000000,
+          "row_count_verification": "PostgreSQL completed COPY command tag in checkpoint transaction",
+          "copy_transport": "libpq output flushed in bounded 128KiB blocks",
+          "source_sha256": "3bf19e84bb3530aa9f286f7c226da6afb3d385fff58608ffbd8ce126d7f50768",
+          "bytes": 3376267817
+        }
+      },
+      "started": "2026-10-26T21:13:53.846736+00:00",
+      "catalog_schema_sha256": "d1e15d2693fcd4b59e3c79d8c835a51c3a2d1da481677d8f9aebad28c350e00f",
+      "total_rows": 160400009,
+      "database_bytes": 15798788611,
+      "postgres_settings": {
+        "autovacuum": "on",
+        "checkpoint_completion_target": "0.9",
+        "checkpoint_timeout": "1800",
+        "fsync": "on",
+        "jit": "off",
+        "maintenance_work_mem": "131072",
+        "max_parallel_workers_per_gather": "0",
+        "max_wal_size": "16384",
+        "server_version": "14.13",
+        "session_preload_libraries": "pg_hint_plan",
+        "shared_buffers": "32768",
+        "shared_preload_libraries": "",
+        "synchronous_commit": "on",
+        "wal_level": "replica",
+        "work_mem": "8192"
+      },
+      "extensions": {
+        "plpgsql": "1.0",
+        "pg_hint_plan": "1.4.3"
+      },
+      "elapsed_s": 845.372,
+      "completed": "2026-10-26T21:27:59.219439+00:00",
+      "postgres_runtime_service": {
+        "available": true,
+        "unit": "mcts-rewrite-postgres.service",
+        "MemoryHigh_bytes": 4294967296,
+        "MemoryMax_bytes": 6442450944,
+        "MemorySwapMax_bytes": 268435456,
+        "ManagedOOMPreference": "avoid",
+        "observed": "2026-10-26T21:28:02.280273+00:00"
+      },
+      "attested": "2026-10-26T21:28:02.280285+00:00"
+    }
+  },
+  "updated": "2026-10-26T21:28:02.291348+00:00",
+  "autovacuum_restoration": {
+    "requested": "on",
+    "reload_requested": true,
+    "observed": "on",
+    "time": "2026-10-26T21:28:02.291339+00:00"
+  }
+}

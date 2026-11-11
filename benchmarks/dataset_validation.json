@@ -1,0 +1,138 @@
+{
+  "format_version": 1,
+  "data_validation_passed": true,
+  "validated": "2026-10-26T21:34:03.970082+00:00",
+  "databases": [
+    {
+      "database": "tpch_dev",
+      "benchmark": "tpch",
+      "profile": "development",
+      "scale": 0.01,
+      "rows": 86805,
+      "tables": 8,
+      "database_bytes": 22192643,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "dsb_dev",
+      "benchmark": "dsb",
+      "profile": "development",
+      "scale": 1,
+      "rows": 20131904,
+      "tables": 25,
+      "database_bytes": 2535498243,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "calcite_dev",
+      "benchmark": "calcite",
+      "profile": "development",
+      "scale": 10000,
+      "rows": 40161,
+      "tables": 6,
+      "database_bytes": 12427779,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "tpch10",
+      "benchmark": "tpch",
+      "profile": "published",
+      "scale": 10,
+      "rows": 86586082,
+      "tables": 8,
+      "database_bytes": 13437673987,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "tpch50",
+      "benchmark": "tpch",
+      "profile": "published",
+      "scale": 50,
+      "rows": 433005841,
+      "tables": 8,
+      "database_bytes": 67164783107,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "dsb10",
+      "benchmark": "dsb",
+      "profile": "published",
+      "scale": 10,
+      "rows": 197261573,
+      "tables": 25,
+      "database_bytes": 22286295555,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "dsb50",
+      "benchmark": "dsb",
+      "profile": "published",
+      "scale": 50,
+      "rows": 365947420,
+      "tables": 25,
+      "database_bytes": 63165178371,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "calcite10",
+      "benchmark": "calcite",
+      "profile": "published",
+      "scale": 40000000,
+      "rows": 160400059,
+      "tables": 6,
+      "database_bytes": 15701238275,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    },
+    {
+      "database": "calcite10zipf",
+      "benchmark": "calcite",
+      "profile": "published",
+      "scale": 40000000,
+      "rows": 160400009,
+      "tables": 6,
+      "database_bytes": 15798788611,
+      "persisted_receipt_matches": true,
+      "read_only_benchmark_role_verified": true
+    }
+  ],
+  "database_count": 9,
+  "published_count": 6,
+  "total_rows": 1423859854,
+  "published_rows": 1403600984,
+  "total_database_bytes": 200124076571,
+  "checks": {
+    "completed_readiness": true,
+    "schema_source_hashes": true,
+    "generator_revision_receipts": true,
+    "persisted_receipts_match_files": true,
+    "hint_extension_catalogs": true,
+    "live_read_only_roles": true,
+    "autovacuum_on": true,
+    "runtime_profile_4G_high_6G_max_256M_swap": true
+  },
+  "validation_scope": "Existing COPY/source receipts and source hashes, live persisted provenance/role/settings; no repeated large row-count scans",
+  "ready_for_final_timings": false,
+  "active_autovacuum_workers": [
+    {
+      "database": "calcite10zipf",
+      "query": "autovacuum: VACUUM public.emp"
+    },
+    {
+      "database": "calcite10",
+      "query": "autovacuum: VACUUM public.emp"
+    },
+    {
+      "database": "dsb50",
+      "query": "autovacuum: VACUUM public.store_sales"
+    }
+  ],
+  "maintenance_observation": "Pending sustained quiet validation after insert-triggered autovacuum; data validation passed independently."
+}

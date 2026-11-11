@@ -1,0 +1,12 @@
+% Application scenario: where the layer sits and when it runs.
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \node[store, minimum width=4.0cm, minimum height=1.05cm] (q) at (2.05, 4.55) {Recurring statement $q$\\(report, dashboard, load job)};
+  \node[proc, minimum width=4.0cm, minimum height=1.05cm] (gen) at (6.45, 4.55) {Rewrite generators\\(rules, replays, LLM)};
+  \node[exec, minimum width=8.4cm, minimum height=1.05cm] (sys) at (4.25, 3.05) {\sys{}: verify, probe, fall back\\(once per statement, inside the tuning window)};
+  \node[store, minimum width=8.4cm, minimum height=1.05cm] (out) at (4.25, 1.55) {Statement to deploy: rewrite $r^{\ast}$ with its evidence label,\\or the original $q$};
+  \node[store, minimum width=8.4cm, minimum height=0.8cm] (db) at (4.25, 0.10) {PostgreSQL server: every later execution};
+  \draw[flow] (q.south) -- (q.south |- sys.north);
+  \draw[flow] (gen.south) -- node[right, inner sep=3pt] {candidates} (gen.south |- sys.north);
+  \draw[flow] (sys.south) -- (out.north);
+  \draw[flow] (out.south) -- (db.north);
+\end{tikzpicture}
